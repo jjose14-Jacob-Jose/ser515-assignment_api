@@ -27,6 +27,6 @@ class TaigaConnectorTest {
     void getResponseFromUrlAsJson() {
 
         JSONObject jsonObjectConnectionResponse = TaigaConnector.getResponseFromUrlAsJson(urlString, requestType, messageBody);
-        Assert.assertEquals(Constants.JSON_TEST_PARAMETER_KEY_EXPECTED_VALUE, jsonObjectConnectionResponse.getInt(Constants.JSON_TEST_PARAMETER_KEY));
+        Assert.assertEquals(Constants.JSON_TEST_PARAMETER_KEY_EXPECTED_VALUE, jsonObjectConnectionResponse.get(Constants.JSON_TEST_PARAMETER_KEY));
     }
 }
