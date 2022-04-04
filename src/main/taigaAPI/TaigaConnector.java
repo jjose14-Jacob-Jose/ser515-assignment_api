@@ -17,32 +17,35 @@ import java.text.ParseException;
 
 public class TaigaConnector {
 
-    public static JSONObject getResponseFromUrlAsJson (String url, String requestMethodType, String requestMessageString) {
+    public static JSONObject getResponseFromUrlAsJson (String urlString, String requestMethodType, String requestMessageString) {
 
-        URL url = new URL ("https://reqres.in/api/users");
+        try {
+            URL url = new URL(urlString);
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod(requestMethodType);
 
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-        con.setRequestProperty("Accept", "application/json");
-        con.setDoOutput(true);
-        String jsonInputString = "{\"name\" \"Upendra\", \"job\": \"Programmer\"}";
+            httpURLConnection.setRequestProperty("Content-Type", "application/json; UTF-8");
+            httpURLConnection.setRequestProperty("Accept", "application/json");
+            httpURLConnection.setDoOutput(true);
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
-
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
+            try (OutputStream outputStream = httpURLConnection.getOutputStream()) {
+                byte[] messageBodyInBytes = requestMessageString.getBytes("utf-8");
+                outputStream.write(messageBodyInBytes, 0, messageBodyInBytes.length);
             }
-            System.out.println(response.toString());
-            JSONObject jsonObject = new JSONObject(response.toString());
-            System.out.printf(jsonObject.toString());
+
+            try (BufferedReader bufferedReader = new BufferedReader(
+                    new InputStreamReader(httpURLConnection.getInputStream(), "utf-8"))) {
+                StringBuilder response = new StringBuilder();
+                String responseLine = null;
+                while ((responseLine = bufferedReader.readLine()) != null) {
+                    response.append(responseLine.trim());
+                }
+                JSONObject jsonObject = new JSONObject(response.toString());
+                return jsonObject;
+            }
+        } catch (Exception exception) {
+            exception.printStackTrace();
+
         }
 
         return null;
@@ -51,33 +54,41 @@ public class TaigaConnector {
 
 
     public static void main (String [] args) throws IOException {
-        URL url = new URL ("https://reqres.in/api/users");
+//        URL url = new URL ("https://reqres.in/api/users");
+//
+//        HttpURLConnection con = (HttpURLConnection)url.openConnection();
+//        con.setRequestMethod("POST");
+//        con.setRequestProperty("Content-Type", "application/json; utf-8");
+//        con.setRequestProperty("Accept", "application/json");
+//        con.setDoOutput(true);
+//        String jsonInputString = "{\"name\" \"Upendra\", \"job\": \"Programmer\"}";
+//
+//        try(OutputStream os = con.getOutputStream()) {
+//            byte[] input = jsonInputString.getBytes("utf-8");
+//            os.write(input, 0, input.length);
+//        }
+//
+//        try(BufferedReader br = new BufferedReader(
+//                new InputStreamReader(con.getInputStream(), "utf-8"))) {
+//            StringBuilder response = new StringBuilder();
+//            String responseLine = null;
+//            while ((responseLine = br.readLine()) != null) {
+//                response.append(responseLine.trim());
+//            }
+//            System.out.println(response.toString());
+//            JSONObject jsonObject = new JSONObject(response.toString());
+//            System.out.printf(jsonObject.toString());
+//        }
 
-        HttpURLConnection con = (HttpURLConnection)url.openConnection();
-        con.setRequestMethod("POST");
-        con.setRequestProperty("Content-Type", "application/json; utf-8");
-        con.setRequestProperty("Accept", "application/json");
-        con.setDoOutput(true);
-        String jsonInputString = "{\"name\" \"Upendra\", \"job\": \"Programmer\"}";
+        String url = "https://reqres.in/api/users";
+        String requestType = "POST";
+        String messageBody = "{\"name\" \"Upendra\", \"job\": \"Programmer\"}";
 
-        try(OutputStream os = con.getOutputStream()) {
-            byte[] input = jsonInputString.getBytes("utf-8");
-            os.write(input, 0, input.length);
-        }
+        url = Constants.URL_TAIGA;
+        requestType = "POST";
+        messageBody = "{\"username\": \"jacobjose123\", \"password\": \"Kochi.345.\", \"type\": \"normal\"}";
 
-        try(BufferedReader br = new BufferedReader(
-                new InputStreamReader(con.getInputStream(), "utf-8"))) {
-            StringBuilder response = new StringBuilder();
-            String responseLine = null;
-            while ((responseLine = br.readLine()) != null) {
-                response.append(responseLine.trim());
-            }
-            System.out.println(response.toString());
-            JSONObject jsonObject = new JSONObject(response.toString());
-            System.out.printf(jsonObject.toString());
-        }
-
-
+    TaigaConnector.getResponseFromUrlAsJson(url,requestType,messageBody);
 
     }
 }
