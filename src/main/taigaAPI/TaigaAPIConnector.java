@@ -1,65 +1,94 @@
 package taigaAPI;
 
-import com.fasterxml.jackson.core.*;
-import org.json.JSONObject;
-
-import java.io.IOException;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
+import java.net.Proxy;
 import java.net.URL;
-import java.util.Scanner;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class TaigaAPIConnector {
-    private HttpClient httpClient;
-    private HttpPost httpPost;
-
     private URL url;
-    private HttpURLConnection httpURLConnection;
+    String testURL = "http://jsonplaceholder.typicode.com/albums";
 
-    public String getResponseStringFromURL(String urlOfAPI, String connectionRequestType) {
-        try {
-            url = new URL(null, urlOfAPI);
-            httpURLConnection = (HttpURLConnection) url.openConnection();
-            httpURLConnection.setRequestMethod(connectionRequestType);
-            httpURLConnection.connect();
+    HttpURLConnection conn;
 
-            int codeResponseHttpURLConnection = httpURLConnection.getResponseCode();
 
-            if(codeResponseHttpURLConnection != Constants.CODE_RESPONSE_SUCCESSFUL_HTTP_CONNECTION) {
-                return Constants.MSG_ERROR_CONNECTION_FAILED;
-            } else {
+    public String getJSONRespone(String urlString) throws IOException {
+//        url = new URL(testURL);
+//
+//        Map<String, String> params = new LinkedHashMap<String, String>();
+//        params.put("username","u_name");
+//        params.put("password","p_word");
+//
+//        StringBuilder postData = new StringBuilder();
+//        for(Map.Entry<String, String> param: params.entrySet()) {
+//            if(postData.length() != 0) {
+//                postData.append('&');
+//            }
+//            postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+//            postData.append("=");
+//            postData.append(URLEncoder.encode(param.getValue(), "UTF-8"));
+//        }
+//        byte [] postDataBytes = postData.toString().getBytes("UTF-8");
+//
+//        conn = (HttpURLConnection) url.openConnection();
+//        conn.setRequestMethod("POST");
+//        conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+//        conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+//        conn.setDoOutput(true);
+//        conn.getOutputStream().write(postDataBytes);
+//        Reader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+//        StringBuilder sb = new StringBuilder();
+//        for (int c; (c = in.read()) >= 0;)
+//            sb.append((char)c);
+//        String response = sb.toString();
 
-                StringBuilder stringBuilderResponse = new StringBuilder();
-                Scanner scannerResponse = new Scanner(url.openStream());
+        String urly = testURL;
+            URL obj = new URL(urly);
+            HttpURLConnection con = (HttpURLConnection) obj.openConnection(Proxy.NO_PROXY);
 
-                while(scannerResponse.hasNext()) {
-                    stringBuilderResponse.append(scannerResponse.nextLine());
-                }
+            con.setRequestMethod("POST");
+            con.setRequestProperty("Content-Type","application/json");
 
-                scannerResponse.close();
-                return stringBuilderResponse.toString();
+            String dataStrng = "hello";
 
+            con.setDoOutput(true);
+            DataOutputStream wr = new DataOutputStream(con.getOutputStream());
+            wr.writeBytes(dataStrng);
+            wr.flush();
+            wr.close();
+
+            int responseCode = con.getResponseCode();
+            System.out.println("Response Code : " + responseCode);
+
+            BufferedReader iny = new BufferedReader(
+                    new InputStreamReader(con.getInputStream()));
+            String output;
+            StringBuffer response = new StringBuffer();
+
+            while ((output = iny.readLine()) != null) {
+                response.append(output);
             }
+            iny.close();
 
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-            InputOutput.displayOnConsole(Constants.MSG_ERROR_CONNECTION_FAILED);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return "hhh";
+            //printing result from response
+            System.out.println(response.toString());
 
+
+        return "";
     }
 
-    private JSONObject convertStringToJSONObject (String stringToBeConvertedToJSON) {
+    public static void main (String [] args) {
+        TaigaAPIConnector taigaAPIConnector = new TaigaAPIConnector();
         try {
-            JsonParser jsonParser = new JsonFactory().createParser(stringToBeConvertedToJSON);
-//            JSONArray jsonArray = (JSONArray) jsonParser.getParsingContext();
+            System.out.printf(taigaAPIConnector.getJSONRespone("Hello"));
         } catch (IOException e) {
             e.printStackTrace();
-            return null;
         }
-        return null;
     }
 
 
