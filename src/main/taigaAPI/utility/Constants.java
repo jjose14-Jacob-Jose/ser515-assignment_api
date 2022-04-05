@@ -8,10 +8,18 @@ public class Constants {
     public static final int CODE_STATUS_OPERATION_TERMINATE = 0;
 
     public static final String URL_TAIGA_AUTHENTICATION = "https://api.taiga.io/api/v1/auth";
+    public static final String URL_TAIGA_PROJECT_BY_SLUG = "https://api.taiga.io/api/v1/projects/by_slug?slug=";
+    public static final String URL_TAIGA_PROJECT_MILESTONES = "https://api.taiga.io/api/v1/milestones?project=";
 
     public static final String STR_CONNECTION_REQUEST_METHOD_TYPE_POST = "POST";
+    public static final String STR_CONNECTION_REQUEST_METHOD_TYPE_GET = "GET";
     public static final String STR_ENCODING_FORMAT_UTF_EIGHT = "UTF-8";
     public static final String STR_JSON_RESPONSE_KEY_AUTHENTICATION_TOKEN = "auth_token";
+    public static final String STR_JSON_RESPONSE_KEY_PROJECT_ID = "id";
+    public static final String STR_JSON_RESPONSE_KEY_SLUG = "slug";
+    public static final String STR_JSON_RESPONSE_KEY_SPRINTS_MILESTONES = "milestones";
+
+    public static final String MSG_SUCCESS_CONNECTION = "Connection Success.";
 
     public static final String MSG_ERROR_CONNECTION_FAILED = "Error while connecting to Taiga API. Please try again later.";
     public static final String MSG_ERROR_PASSWORD_FAILED_TO_GET_CONSOLE = "Unable to get Console reader to mask your password. +" +

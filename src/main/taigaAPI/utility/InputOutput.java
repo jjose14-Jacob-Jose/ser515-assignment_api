@@ -35,8 +35,8 @@ public class InputOutput {
         try{
             initializeMembers();
             displayOnConsole(promptToBeDisplayed);
-            bufferedReader.readLine();
-            int inputFromConsole = Integer.parseInt(bufferedReader.toString());
+            String userInput = bufferedReader.readLine();
+            int inputFromConsole = Integer.parseInt(userInput);
             return  inputFromConsole;
         } catch (IOException e) {
             e.printStackTrace();

@@ -1,5 +1,7 @@
 package taigaAPI;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
 import taigaAPI.utility.Constants;
 import taigaAPI.utility.InputOutput;
@@ -8,6 +10,7 @@ public class TaigaMenu {
 
     private String taigaAuthenticationToken;
     private String taigaProjectSlug;
+    private String taigaProjectID;
 
 
     private String textMenuInputInformation;
@@ -46,9 +49,9 @@ public class TaigaMenu {
 
             switch (inputByUser) {
                 case 1: inputByUser = getAuthenticationTokenWithUserCredentials();
-
                         break;
-                case 2: getProjectSlug();
+                case 2: readProjectSlug();
+                        displayProjectInformationMenu();
                         break;
                 default: InputOutput.displayOnConsole(msgInvalidInput);
 
@@ -62,36 +65,58 @@ public class TaigaMenu {
         String username = InputOutput.readTextFromConsoleString("username:");
         String password = InputOutput.readPasswordFromConsoleString("password:");
         String jsonMessageBody = "{\"username\": \"" + username + "\", \"password\": \"" + password + "\", \"type\": \"normal\"}";
-        JSONObject jsonObjectTaigaLoginResponse = TaigaConnector.getResponseFromUrlAsJsonPOST(Constants.URL_TAIGA_AUTHENTICATION, jsonMessageBody);
+        JSONObject jsonObjectTaigaLoginResponse = TaigaConnector.getResponseFromUrlAsJsonGET(Constants.URL_TAIGA_AUTHENTICATION, jsonMessageBody);
 
-        taigaAuthenticationToken = jsonObjectTaigaLoginResponse.get(Constants.STR_JSON_RESPONSE_KEY_AUTHENTICATION_TOKEN).toString();
         taigaAuthenticationToken = TaigaConnector.getValueOfKeyFromJSON(jsonObjectTaigaLoginResponse,Constants.STR_JSON_RESPONSE_KEY_AUTHENTICATION_TOKEN);
 
         if(taigaAuthenticationToken!=null && taigaAuthenticationToken.length() > 0) {
+            taigaProjectID = TaigaConnector.getValueOfKeyFromJSON(jsonObjectTaigaLoginResponse,Constants.STR_JSON_RESPONSE_KEY_PROJECT_ID);
             return Constants.CODE_STATUS_OPERATION_SUCCESS;
         } else {
             return Constants.CODE_STATUS_OPERATION_FAILED;
         }
     }
 
-    private void getProjectSlug() {
+    private void readProjectSlug() {
+        taigaProjectSlug = InputOutput.readTextFromConsoleString("Enter project's slug:");
 
+        JSONObject jsonValidateSlug = getJsonUsingProjectSlug();
+        String taigaProjectSlugFromResponse = TaigaConnector.getValueOfKeyFromJSON(jsonValidateSlug,Constants.STR_JSON_RESPONSE_KEY_SLUG);
+
+        if(taigaProjectSlug.equalsIgnoreCase(taigaProjectSlugFromResponse)) {
+            InputOutput.displayOnConsole(Constants.MSG_SUCCESS_CONNECTION);
+        }
     }
-    
+
+    private JSONObject getJsonUsingProjectSlug() {
+
+        if(taigaProjectSlug == null || taigaProjectSlug.length() == 0) {
+            return null;
+        } else {
+        JSONObject jsonValidateSlug = TaigaConnector.getResponseFromUrlAsJsonGET(Constants.URL_TAIGA_PROJECT_BY_SLUG + taigaProjectSlug);
+        return jsonValidateSlug;
+        }
+    }
+
+
     public void displayProjectInformationMenu() {
 
         int inputByUser = -1;
         do {
-            inputByUser = InputOutput.readIntegerFromConsoleString(textExitMenu);
+            inputByUser = InputOutput.readIntegerFromConsoleString(textProjectMenu);
 
-            switch (inputByUser){
-                case 1: displayAllSprints();
-                        break;
-                case 2: displayAllUserStories();
+            switch (inputByUser) {
+                case 1:
+                    displayAllSprints();
                     break;
-                case 3: displaySprintDetailsBasedOnSprintNumber();
+                case 2:
+                    displayAllUserStories();
                     break;
-                default: InputOutput.displayOnConsole(msgInvalidInput);
+                case 3:
+                    displaySprintDetailsBasedOnSprintNumber();
+                    break;
+                default:
+                    InputOutput.displayOnConsole(msgInvalidInput);
             }
 
         }while(inputByUser != Constants.CODE_STATUS_OPERATION_TERMINATE);
@@ -99,6 +124,10 @@ public class TaigaMenu {
     }
 
     public void displayAllSprints() {
+        JSONObject jsonContainingSprints = TaigaConnector.getResponseFromUrlAsJsonGET(Constants.URL_TAIGA_PROJECT_MILESTONES + taigaProjectID);
+        String sprintsInProject = jsonContainingSprints.get(Constants.STR_JSON_RESPONSE_KEY_SPRINTS_MILESTONES).toString();
+        ObjectMapper objectMapper = new ObjectMapper();
+
 
     }
 
@@ -113,7 +142,10 @@ public class TaigaMenu {
 
     public static void main(String[] args) {
         TaigaMenu taigaMenu = new TaigaMenu();
-        taigaMenu.getAuthenticationTokenWithUserCredentials();
+        taigaMenu.displayMainMenu();
+//        taigaMenu.getAuthenticationTokenWithUserCredentials();
+//        taigaMenu.displayAllSprints();
+
     }
 
 }
