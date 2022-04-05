@@ -1,0 +1,767 @@
+{
+  "id": 445524,
+  "name": "Biscuits-Bandlamudi-Public",
+  "slug": "jacobjose123-biscuits-bandlamudi",
+  "description": "It is a Java-based command-line tool that manages Scrum-based projects",
+  "created_date": "2022-02-01T22:13:35Z",
+  "modified_date": "2022-04-05T02:06:24.569Z",
+  "owner": {
+    "username": "jacobjose123",
+    "full_name_display": "Jacob Jose ",
+    "photo": null,
+    "big_photo": null,
+    "gravatar_id": "10c7621e8b65af079e747dd4d2d604c8",
+    "is_active": true,
+    "id": 502623
+  },
+  "members": [
+    {
+      "role": 2715376,
+      "role_name": "Developer",
+      "full_name": "Jacob Jose ",
+      "full_name_display": "Jacob Jose ",
+      "is_active": true,
+      "id": 502623,
+      "color": "#ed35c5",
+      "username": "jacobjose123",
+      "photo": null,
+      "gravatar_id": "10c7621e8b65af079e747dd4d2d604c8"
+    },
+    {
+      "role": 2715376,
+      "role_name": "Developer",
+      "full_name": "Jacob Jose",
+      "full_name_display": "Jacob Jose",
+      "is_active": true,
+      "id": 502632,
+      "color": "#81a95f",
+      "username": "jjose14",
+      "photo": "https://media-protected.taiga.io/user/b/6/3/2/84bb4a7019aa67f0011cd1ba08622ee90101152478eb889345f4d3b54bbf/jacob_jose-dp.jpeg.80x80_q85_crop.jpg?token=YkwNSw%3A2VwzoSVu-JRahHJ6J51w_UJ01ZJv2I-rFXPCwNXz3OpU8SXaXaTdTEQVoSTTGnb3GuT40MAlhIECvOX6V4Nvfw",
+      "gravatar_id": "89c4d360406834c7b9207a25701732a8"
+    }
+  ],
+  "total_milestones": null,
+  "total_story_points": null,
+  "is_contact_activated": true,
+  "is_epics_activated": true,
+  "is_backlog_activated": true,
+  "is_kanban_activated": false,
+  "is_wiki_activated": true,
+  "is_issues_activated": true,
+  "videoconferences": null,
+  "videoconferences_extra_data": null,
+  "creation_template": 1,
+  "is_private": false,
+  "anon_permissions": [
+    "view_wiki_links",
+    "view_project",
+    "view_milestones",
+    "view_epics",
+    "view_wiki_pages",
+    "view_tasks",
+    "view_issues",
+    "view_us"
+  ],
+  "public_permissions": [
+    "view_wiki_links",
+    "view_project",
+    "view_milestones",
+    "view_epics",
+    "view_wiki_pages",
+    "view_tasks",
+    "view_issues",
+    "view_us"
+  ],
+  "is_featured": false,
+  "is_looking_for_people": false,
+  "looking_for_people_note": "",
+  "blocked_code": null,
+  "totals_updated_datetime": "2022-04-05T02:46:05.325Z",
+  "total_fans": 0,
+  "total_fans_last_week": 0,
+  "total_fans_last_month": 0,
+  "total_fans_last_year": 0,
+  "total_activity": 535,
+  "total_activity_last_week": 37,
+  "total_activity_last_month": 44,
+  "total_activity_last_year": 535,
+  "tags": [],
+  "tags_colors": {
+    "tag 4": null,
+    "tag 1": null,
+    "tag 3": null,
+    "gui": null,
+    "pp": null
+  },
+  "default_epic_status": 2090586,
+  "default_points": 5374001,
+  "default_us_status": 2682018,
+  "default_task_status": 2224202,
+  "default_priority": 1339083,
+  "default_severity": 2225471,
+  "default_issue_status": 3122083,
+  "default_issue_type": 1344883,
+  "default_swimlane": null,
+  "my_permissions": [
+    "view_wiki_links",
+    "view_project",
+    "view_milestones",
+    "view_epics",
+    "view_wiki_pages",
+    "view_tasks",
+    "view_issues",
+    "view_us"
+  ],
+  "i_am_owner": false,
+  "i_am_admin": false,
+  "i_am_member": false,
+  "notify_level": null,
+  "total_closed_milestones": 4,
+  "is_watcher": false,
+  "total_watchers": 11,
+  "logo_small_url": null,
+  "logo_big_url": null,
+  "is_fan": false,
+  "my_homepage": "{}",
+  "epic_statuses": [
+    {
+      "id": 2090586,
+      "name": "New",
+      "slug": "new",
+      "order": 1,
+      "is_closed": false,
+      "color": "#70728F",
+      "project_id": 445524
+    },
+    {
+      "id": 2090587,
+      "name": "In progress",
+      "slug": "in-progress",
+      "order": 3,
+      "is_closed": false,
+      "color": "#E47C40",
+      "project_id": 445524
+    },
+    {
+      "id": 2090588,
+      "name": "Ready for test",
+      "slug": "ready-for-test",
+      "order": 4,
+      "is_closed": false,
+      "color": "#E4CE40",
+      "project_id": 445524
+    },
+    {
+      "id": 2090589,
+      "name": "Done",
+      "slug": "done",
+      "order": 5,
+      "is_closed": true,
+      "color": "#A8E440",
+      "project_id": 445524
+    }
+  ],
+  "swimlanes": null,
+  "us_statuses": [
+    {
+      "id": 2682018,
+      "name": "New",
+      "order": 1,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#70728F",
+      "wip_limit": null,
+      "slug": "new",
+      "is_archived": false
+    },
+    {
+      "id": 2682019,
+      "name": "In progress",
+      "order": 3,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#E47C40",
+      "wip_limit": null,
+      "slug": "in-progress",
+      "is_archived": false
+    },
+    {
+      "id": 2682020,
+      "name": "Ready for test",
+      "order": 4,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#E4CE40",
+      "wip_limit": null,
+      "slug": "ready-for-test",
+      "is_archived": false
+    },
+    {
+      "id": 2682021,
+      "name": "Done",
+      "order": 5,
+      "is_closed": true,
+      "project_id": 445524,
+      "color": "#A8E440",
+      "wip_limit": null,
+      "slug": "done",
+      "is_archived": false
+    },
+    {
+      "id": 2682022,
+      "name": "Archived",
+      "order": 6,
+      "is_closed": true,
+      "project_id": 445524,
+      "color": "#A9AABC",
+      "wip_limit": null,
+      "slug": "archived",
+      "is_archived": true
+    }
+  ],
+  "us_duedates": [
+    {
+      "id": 489776,
+      "name": "Default",
+      "order": 1,
+      "by_default": true,
+      "color": "#9dce0a",
+      "days_to_due": null,
+      "project_id": 445524
+    },
+    {
+      "id": 489777,
+      "name": "Due soon",
+      "order": 2,
+      "by_default": false,
+      "color": "#ff9900",
+      "days_to_due": 1,
+      "project_id": 445524
+    },
+    {
+      "id": 489778,
+      "name": "Past due",
+      "order": 3,
+      "by_default": false,
+      "color": "#E44057",
+      "days_to_due": 0,
+      "project_id": 445524
+    }
+  ],
+  "points": [
+    {
+      "id": 5374001,
+      "name": "?",
+      "order": 0,
+      "value": null,
+      "project_id": 445524
+    },
+    {
+      "id": 5374002,
+      "name": "1",
+      "order": 1,
+      "value": 1,
+      "project_id": 445524
+    },
+    {
+      "id": 5374003,
+      "name": "2",
+      "order": 2,
+      "value": 2,
+      "project_id": 445524
+    },
+    {
+      "id": 5374004,
+      "name": "3",
+      "order": 3,
+      "value": 3,
+      "project_id": 445524
+    },
+    {
+      "id": 5374005,
+      "name": "5",
+      "order": 4,
+      "value": 5,
+      "project_id": 445524
+    },
+    {
+      "id": 5374006,
+      "name": "8",
+      "order": 5,
+      "value": 8,
+      "project_id": 445524
+    },
+    {
+      "id": 5374007,
+      "name": "13",
+      "order": 6,
+      "value": 13,
+      "project_id": 445524
+    },
+    {
+      "id": 5374008,
+      "name": "21",
+      "order": 7,
+      "value": 21,
+      "project_id": 445524
+    },
+    {
+      "id": 5374009,
+      "name": "34",
+      "order": 8,
+      "value": 34,
+      "project_id": 445524
+    },
+    {
+      "id": 5374010,
+      "name": "55",
+      "order": 9,
+      "value": 55,
+      "project_id": 445524
+    }
+  ],
+  "task_statuses": [
+    {
+      "id": 2224202,
+      "name": "New",
+      "order": 1,
+      "is_closed": false,
+      "color": "#70728F",
+      "project_id": 445524,
+      "slug": "new"
+    },
+    {
+      "id": 2224203,
+      "name": "In progress",
+      "order": 2,
+      "is_closed": false,
+      "color": "#E47C40",
+      "project_id": 445524,
+      "slug": "in-progress"
+    },
+    {
+      "id": 2224204,
+      "name": "Ready for test",
+      "order": 3,
+      "is_closed": false,
+      "color": "#E4CE40",
+      "project_id": 445524,
+      "slug": "ready-for-test"
+    },
+    {
+      "id": 2224205,
+      "name": "DONE",
+      "order": 4,
+      "is_closed": true,
+      "color": "#A8E440",
+      "project_id": 445524,
+      "slug": "done"
+    },
+    {
+      "id": 2224206,
+      "name": "Blocker",
+      "order": 5,
+      "is_closed": false,
+      "color": "#5178D3",
+      "project_id": 445524,
+      "slug": "blocker"
+    }
+  ],
+  "task_duedates": [
+    {
+      "id": 489610,
+      "name": "Default",
+      "order": 1,
+      "by_default": true,
+      "color": "#9dce0a",
+      "days_to_due": null,
+      "project_id": 445524
+    },
+    {
+      "id": 489611,
+      "name": "Due soon",
+      "order": 2,
+      "by_default": false,
+      "color": "#ff9900",
+      "days_to_due": 2,
+      "project_id": 445524
+    },
+    {
+      "id": 489612,
+      "name": "Past due",
+      "order": 3,
+      "by_default": false,
+      "color": "#E44057",
+      "days_to_due": 0,
+      "project_id": 445524
+    }
+  ],
+  "issue_statuses": [
+    {
+      "id": 3122083,
+      "name": "New",
+      "order": 1,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#70728F",
+      "slug": "new"
+    },
+    {
+      "id": 3122084,
+      "name": "In progress",
+      "order": 2,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#40A8E4",
+      "slug": "in-progress"
+    },
+    {
+      "id": 3122085,
+      "name": "Ready for test",
+      "order": 3,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#E4CE40",
+      "slug": "ready-for-test"
+    },
+    {
+      "id": 3122086,
+      "name": "DONE",
+      "order": 4,
+      "is_closed": true,
+      "project_id": 445524,
+      "color": "#A8E440",
+      "slug": "done"
+    },
+    {
+      "id": 3122087,
+      "name": "Needs Info",
+      "order": 5,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#E44057",
+      "slug": "needs-info"
+    },
+    {
+      "id": 3122088,
+      "name": "Rejected",
+      "order": 6,
+      "is_closed": true,
+      "project_id": 445524,
+      "color": "#A9AABC",
+      "slug": "rejected"
+    },
+    {
+      "id": 3122089,
+      "name": "Postponed",
+      "order": 7,
+      "is_closed": false,
+      "project_id": 445524,
+      "color": "#5178D3",
+      "slug": "postponed"
+    }
+  ],
+  "issue_types": [
+    {
+      "id": 1344883,
+      "name": "Bug",
+      "order": 1,
+      "project_id": 445524,
+      "color": "#E44057"
+    },
+    {
+      "id": 1344884,
+      "name": "Question",
+      "order": 2,
+      "project_id": 445524,
+      "color": "#5178D3"
+    },
+    {
+      "id": 1344885,
+      "name": "Impediment",
+      "order": 3,
+      "project_id": 445524,
+      "color": "#A9AABC"
+    }
+  ],
+  "issue_duedates": [
+    {
+      "id": 489501,
+      "name": "Default",
+      "order": 1,
+      "by_default": true,
+      "color": "#9dce0a",
+      "days_to_due": null,
+      "project_id": 445524
+    },
+    {
+      "id": 489502,
+      "name": "Due soon",
+      "order": 2,
+      "by_default": false,
+      "color": "#ff9900",
+      "days_to_due": 1,
+      "project_id": 445524
+    },
+    {
+      "id": 489503,
+      "name": "Past due",
+      "order": 3,
+      "by_default": false,
+      "color": "#E44057",
+      "days_to_due": 0,
+      "project_id": 445524
+    }
+  ],
+  "priorities": [
+    {
+      "id": 1339082,
+      "name": "Low",
+      "order": 1,
+      "project_id": 445524,
+      "color": "#A8E440"
+    },
+    {
+      "id": 1339083,
+      "name": "Normal",
+      "order": 3,
+      "project_id": 445524,
+      "color": "#E4CE40"
+    },
+    {
+      "id": 1339084,
+      "name": "High",
+      "order": 5,
+      "project_id": 445524,
+      "color": "#E47C40"
+    }
+  ],
+  "severities": [
+    {
+      "id": 2225469,
+      "name": "Wishlist",
+      "order": 1,
+      "project_id": 445524,
+      "color": "#70728F"
+    },
+    {
+      "id": 2225470,
+      "name": "Minor",
+      "order": 2,
+      "project_id": 445524,
+      "color": "#40A8E4"
+    },
+    {
+      "id": 2225471,
+      "name": "Normal",
+      "order": 3,
+      "project_id": 445524,
+      "color": "#40E47C"
+    },
+    {
+      "id": 2225472,
+      "name": "Important",
+      "order": 4,
+      "project_id": 445524,
+      "color": "#E4A240"
+    },
+    {
+      "id": 2225473,
+      "name": "Critical",
+      "order": 5,
+      "project_id": 445524,
+      "color": "#D35450"
+    }
+  ],
+  "epic_custom_attributes": [
+    {
+      "id": 12666,
+      "name": "Business Value",
+      "description": "The value to the customer if this epic is delivered",
+      "type": "dropdown",
+      "order": 1,
+      "created_date": "2022-02-03T00:36:21+00:00",
+      "modified_date": "2022-02-03T00:36:21+00:00",
+      "project_id": 445524,
+      "extra": null
+    }
+  ],
+  "userstory_custom_attributes": [
+    {
+      "id": 31682,
+      "name": "Business Value",
+      "description": "The value to the customer if this epic is delivered",
+      "order": 1,
+      "created_date": "2022-02-03T00:36:27+00:00",
+      "modified_date": "2022-02-03T00:36:27+00:00",
+      "project_id": 445524,
+      "type": "dropdown",
+      "extra": null
+    }
+  ],
+  "task_custom_attributes": [
+    {
+      "id": 19382,
+      "name": "Happiness",
+      "description": "How did working on this task affect your mood?",
+      "order": 1,
+      "created_date": "2022-02-03T00:36:31+00:00",
+      "modified_date": "2022-02-03T00:36:31+00:00",
+      "project_id": 445524,
+      "type": "dropdown",
+      "extra": null
+    }
+  ],
+  "issue_custom_attributes": null,
+  "roles": [
+    {
+      "id": 2715376,
+      "name": "Developer",
+      "slug": "ux",
+      "order": 10,
+      "computable": true,
+      "project_id": 445524,
+      "permissions": [
+        "add_issue",
+        "modify_issue",
+        "delete_issue",
+        "view_issues",
+        "add_milestone",
+        "modify_milestone",
+        "delete_milestone",
+        "view_milestones",
+        "view_project",
+        "add_task",
+        "modify_task",
+        "delete_task",
+        "view_tasks",
+        "add_us",
+        "modify_us",
+        "delete_us",
+        "view_us",
+        "add_wiki_page",
+        "modify_wiki_page",
+        "delete_wiki_page",
+        "view_wiki_pages",
+        "add_wiki_link",
+        "delete_wiki_link",
+        "view_wiki_links",
+        "view_epics",
+        "add_epic",
+        "modify_epic",
+        "delete_epic",
+        "comment_epic",
+        "comment_us",
+        "comment_task",
+        "comment_issue",
+        "comment_wiki_page"
+      ]
+    },
+    {
+      "id": 2715377,
+      "name": "Product Owner",
+      "slug": "product-owner",
+      "order": 50,
+      "computable": false,
+      "project_id": 445524,
+      "permissions": [
+        "add_issue",
+        "modify_issue",
+        "delete_issue",
+        "view_issues",
+        "add_milestone",
+        "modify_milestone",
+        "delete_milestone",
+        "view_milestones",
+        "view_project",
+        "add_task",
+        "modify_task",
+        "delete_task",
+        "view_tasks",
+        "add_us",
+        "modify_us",
+        "delete_us",
+        "view_us",
+        "add_wiki_page",
+        "modify_wiki_page",
+        "delete_wiki_page",
+        "view_wiki_pages",
+        "add_wiki_link",
+        "delete_wiki_link",
+        "view_wiki_links",
+        "view_epics",
+        "add_epic",
+        "modify_epic",
+        "delete_epic",
+        "comment_epic",
+        "comment_us",
+        "comment_task",
+        "comment_issue",
+        "comment_wiki_page"
+      ]
+    },
+    {
+      "id": 2715378,
+      "name": "Stakeholder",
+      "slug": "stakeholder",
+      "order": 60,
+      "computable": false,
+      "project_id": 445524,
+      "permissions": [
+        "add_issue",
+        "modify_issue",
+        "delete_issue",
+        "view_issues",
+        "view_milestones",
+        "view_project",
+        "view_tasks",
+        "view_us",
+        "modify_wiki_page",
+        "view_wiki_pages",
+        "add_wiki_link",
+        "delete_wiki_link",
+        "view_wiki_links",
+        "view_epics",
+        "comment_epic",
+        "comment_us",
+        "comment_task",
+        "comment_issue",
+        "comment_wiki_page"
+      ]
+    }
+  ],
+  "total_memberships": 2,
+  "is_out_of_owner_limits": false,
+  "milestones": [
+    {
+      "id": 314801,
+      "slug": "ramp-up-7",
+      "name": "Ramp-up",
+      "closed": true
+    },
+    {
+      "id": 314802,
+      "slug": "sprint-1-397",
+      "name": "Sprint 1",
+      "closed": true
+    },
+    {
+      "id": 314803,
+      "slug": "sprint-2-237",
+      "name": "Sprint 2",
+      "closed": true
+    },
+    {
+      "id": 314804,
+      "slug": "sprint-3-207",
+      "name": "Sprint 3",
+      "closed": true
+    },
+    {
+      "id": 314805,
+      "slug": "sprint-4-119",
+      "name": "Sprint 4",
+      "closed": false
+    }
+  ]
+}

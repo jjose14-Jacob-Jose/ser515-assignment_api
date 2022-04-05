@@ -24,11 +24,23 @@ public class InputOutput {
         try{
             initializeMembers();
             displayOnConsole(promptToBeDisplayed);
-            bufferedReader.readLine();
-            return  bufferedReader.toString();
+            String userInput = bufferedReader.readLine();
+            return  userInput;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static int readIntegerFromConsoleString(String promptToBeDisplayed) {
+        try{
+            initializeMembers();
+            displayOnConsole(promptToBeDisplayed);
+            String userInput = bufferedReader.readLine();
+            return Integer.parseInt(userInput);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Constants.CODE_RESPONSE_FAIL;
         }
     }
 
