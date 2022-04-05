@@ -1,4 +1,4 @@
-package taigaAPI;
+package taigaAPI.utility;
 
 public class Constants {
 

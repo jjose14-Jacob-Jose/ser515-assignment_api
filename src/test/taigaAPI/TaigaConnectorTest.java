@@ -4,6 +4,7 @@ import org.json.JSONObject;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import taigaAPI.utility.Constants;
 
 class TaigaConnectorTest {
 

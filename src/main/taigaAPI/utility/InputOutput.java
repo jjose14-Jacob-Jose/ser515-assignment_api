@@ -1,4 +1,4 @@
-package taigaAPI;
+package taigaAPI.utility;
 
 import java.io.BufferedReader;
 import java.io.Console;

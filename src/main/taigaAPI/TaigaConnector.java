@@ -1,6 +1,9 @@
 package taigaAPI;
 
 import org.json.JSONObject;
+import taigaAPI.utility.Constants;
+import taigaAPI.utility.InputOutput;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -34,6 +37,7 @@ public class TaigaConnector {
                     response.append(responseLine.trim());
                 }
                 JSONObject jsonObject = new JSONObject(response.toString());
+                InputOutput.displayOnConsole(jsonObject.toString());
                 return jsonObject;
             }
         } catch (Exception exception) {
