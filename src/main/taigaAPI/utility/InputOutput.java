@@ -24,11 +24,23 @@ public class InputOutput {
         try{
             initializeMembers();
             displayOnConsole(promptToBeDisplayed);
-            bufferedReader.readLine();
-            return  bufferedReader.toString();
+            return bufferedReader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+    public static int readIntegerFromConsoleString(String promptToBeDisplayed) {
+        try{
+            initializeMembers();
+            displayOnConsole(promptToBeDisplayed);
+            bufferedReader.readLine();
+            int inputFromConsole = Integer.parseInt(bufferedReader.toString());
+            return  inputFromConsole;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return -1;
         }
     }
 
@@ -37,9 +49,15 @@ public class InputOutput {
         displayOnConsole(promptToBeDisplayed);
 
         Console console = System.console();
-        char [] arrayPassword = console.readPassword();
+        if(console == null)
+        {
+            String password = InputOutput.readTextFromConsoleString(Constants.MSG_ERROR_PASSWORD_FAILED_TO_GET_CONSOLE);
+            return  password;
+        } else {
+            char[] arrayPassword = console.readPassword();
 
-        return Arrays.toString(arrayPassword);
+            return Arrays.toString(arrayPassword);
+        }
 
     }
 }

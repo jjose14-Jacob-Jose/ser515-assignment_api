@@ -20,7 +20,7 @@ class TaigaConnectorTest {
         taigaConnector = new TaigaConnector();
 
         urlString = Constants.URL_TAIGA_AUTHENTICATION;
-        requestType = Constants.STR_CONNECTION_REQUEST_METHOD_TYPE;
+        requestType = Constants.STR_CONNECTION_REQUEST_METHOD_TYPE_POST;
         messageBody = Constants.JSON_TEST_CREDENTIALS;
     }
 
