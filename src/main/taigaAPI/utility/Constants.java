@@ -8,6 +8,7 @@ public class Constants {
 
     public static final String URL_TAIGA_USER_AUTHENTICATION = "https://api.taiga.io/api/v1/auth";
     public static final String URL_TAIGA_PROJECT_BY_SLUG = "https://api.taiga.io/api/v1/projects/by_slug?slug=";
+    public static final String URL_TAIGA_PROJECT_BY_MILESTONES = "https://api.taiga.io/api/v1/milestones?project=";
 
     public static final String TYPE_CONNECTION_REQUEST_GET = "GET";
     public static final String TYPE_CONNECTION_REQUEST_POST = "POST";

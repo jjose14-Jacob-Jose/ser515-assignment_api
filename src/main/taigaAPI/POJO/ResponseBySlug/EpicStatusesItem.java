@@ -1,8 +1,8 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TaskStatusesItem{
+public class EpicStatusesItem{
 
 	@JsonProperty("color")
 	private String color;

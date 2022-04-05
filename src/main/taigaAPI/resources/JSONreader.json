@@ -1,767 +1,927 @@
-{
-  "id": 445524,
-  "name": "Biscuits-Bandlamudi-Public",
-  "slug": "jacobjose123-biscuits-bandlamudi",
-  "description": "It is a Java-based command-line tool that manages Scrum-based projects",
-  "created_date": "2022-02-01T22:13:35Z",
-  "modified_date": "2022-04-05T02:06:24.569Z",
-  "owner": {
-    "username": "jacobjose123",
-    "full_name_display": "Jacob Jose ",
-    "photo": null,
-    "big_photo": null,
-    "gravatar_id": "10c7621e8b65af079e747dd4d2d604c8",
-    "is_active": true,
-    "id": 502623
+[
+  {
+    "project": 445524,
+    "project_extra_info": {
+      "name": "Biscuits-Bandlamudi-Public",
+      "slug": "jacobjose123-biscuits-bandlamudi",
+      "logo_small_url": null,
+      "id": 445524
+    },
+    "id": 314805,
+    "name": "Sprint 4",
+    "slug": "sprint-4-119",
+    "owner": 487845,
+    "estimated_start": "2022-04-03",
+    "estimated_finish": "2022-04-17",
+    "created_date": "2022-02-03T00:44:37Z",
+    "modified_date": "2022-04-05T02:44:59.397Z",
+    "closed": false,
+    "disponibility": 0.0,
+    "order": 1,
+    "user_stories": [
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938510,
+        "ref": 8,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-02-05T04:26:56Z",
+        "modified_date": "2022-02-26T02:56:42Z",
+        "finish_date": null,
+        "subject": "Persist the state of the tool",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 3,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317142,
+        "sprint_order": 4,
+        "kanban_order": 1644035216506529,
+        "epics": null,
+        "points": {
+          "2715376": 5374007
+        },
+        "total_points": 13.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": 502632,
+        "assigned_to_extra_info": {
+          "username": "jjose14",
+          "full_name_display": "Jacob Jose",
+          "photo": "https://media-protected.taiga.io/user/b/6/3/2/84bb4a7019aa67f0011cd1ba08622ee90101152478eb889345f4d3b54bbf/jacob_jose-dp.jpeg.80x80_q85_crop.jpg?token=YkwehA%3AJtiqhv30MOOttRRBVNlVPoEAa1D_oJDIcXpG6PSLXiMBtQ8lw3sP2q89o8NIkC2vcnbO9KTY2l1KbWa63oPw-A",
+          "big_photo": "https://media-protected.taiga.io/user/b/6/3/2/84bb4a7019aa67f0011cd1ba08622ee90101152478eb889345f4d3b54bbf/jacob_jose-dp.jpeg.300x300_q85_crop.jpg?token=YkwehA%3ALVu6nyNyiC5vZJ-SpKPHxS60H9VgpvQuoFKgb4QhW0B0rU7ssF2LVq9vyxgV-lN8_98tXmn3mWR_xkyJSB5sJA",
+          "gravatar_id": "89c4d360406834c7b9207a25701732a8",
+          "is_active": true,
+          "id": 502632
+        },
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938512,
+        "ref": 9,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-02-05T04:27:55Z",
+        "modified_date": "2022-03-04T09:38:21Z",
+        "finish_date": null,
+        "subject": "Saving project information to a text tile. - TDD",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 6,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317144,
+        "sprint_order": 2,
+        "kanban_order": 1644035275300937,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938515,
+        "ref": 10,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-02-05T04:52:00Z",
+        "modified_date": "2022-03-05T00:20:19Z",
+        "finish_date": null,
+        "subject": "Make use to shortcuts in commands",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 5,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317146,
+        "sprint_order": 3,
+        "kanban_order": 1644036720601319,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938522,
+        "ref": 24,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-02-05T23:20:24Z",
+        "modified_date": "2022-02-26T02:53:24Z",
+        "finish_date": null,
+        "subject": "Import details from taiga using API",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 9,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317150,
+        "sprint_order": 1,
+        "kanban_order": 1644103224796037,
+        "epics": null,
+        "points": {
+          "2715376": 5374006
+        },
+        "total_points": 8.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938528,
+        "ref": 65,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-02-26T03:02:32Z",
+        "modified_date": "2022-03-05T02:48:49Z",
+        "finish_date": null,
+        "subject": "Implementing GUI",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 2,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1645844552764006,
+        "sprint_order": 5,
+        "kanban_order": 1645844552791392,
+        "epics": null,
+        "points": {
+          "2715376": 5374007
+        },
+        "total_points": 13.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938529,
+        "ref": 83,
+        "milestone": 314805,
+        "is_closed": false,
+        "created_date": "2022-03-04T21:50:07Z",
+        "modified_date": "2022-03-04T21:50:07Z",
+        "finish_date": null,
+        "subject": "Adding Issues to the tool",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 1,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1646430607390580,
+        "sprint_order": 6,
+        "kanban_order": 1646430607418757,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      }
+    ],
+    "total_points": 49.0,
+    "closed_points": null
   },
-  "members": [
-    {
-      "role": 2715376,
-      "role_name": "Developer",
-      "full_name": "Jacob Jose ",
-      "full_name_display": "Jacob Jose ",
-      "is_active": true,
-      "id": 502623,
-      "color": "#ed35c5",
-      "username": "jacobjose123",
-      "photo": null,
-      "gravatar_id": "10c7621e8b65af079e747dd4d2d604c8"
+  {
+    "project": 445524,
+    "project_extra_info": {
+      "name": "Biscuits-Bandlamudi-Public",
+      "slug": "jacobjose123-biscuits-bandlamudi",
+      "logo_small_url": null,
+      "id": 445524
     },
-    {
-      "role": 2715376,
-      "role_name": "Developer",
-      "full_name": "Jacob Jose",
-      "full_name_display": "Jacob Jose",
-      "is_active": true,
-      "id": 502632,
-      "color": "#81a95f",
-      "username": "jjose14",
-      "photo": "https://media-protected.taiga.io/user/b/6/3/2/84bb4a7019aa67f0011cd1ba08622ee90101152478eb889345f4d3b54bbf/jacob_jose-dp.jpeg.80x80_q85_crop.jpg?token=YkwNSw%3A2VwzoSVu-JRahHJ6J51w_UJ01ZJv2I-rFXPCwNXz3OpU8SXaXaTdTEQVoSTTGnb3GuT40MAlhIECvOX6V4Nvfw",
-      "gravatar_id": "89c4d360406834c7b9207a25701732a8"
-    }
-  ],
-  "total_milestones": null,
-  "total_story_points": null,
-  "is_contact_activated": true,
-  "is_epics_activated": true,
-  "is_backlog_activated": true,
-  "is_kanban_activated": false,
-  "is_wiki_activated": true,
-  "is_issues_activated": true,
-  "videoconferences": null,
-  "videoconferences_extra_data": null,
-  "creation_template": 1,
-  "is_private": false,
-  "anon_permissions": [
-    "view_wiki_links",
-    "view_project",
-    "view_milestones",
-    "view_epics",
-    "view_wiki_pages",
-    "view_tasks",
-    "view_issues",
-    "view_us"
-  ],
-  "public_permissions": [
-    "view_wiki_links",
-    "view_project",
-    "view_milestones",
-    "view_epics",
-    "view_wiki_pages",
-    "view_tasks",
-    "view_issues",
-    "view_us"
-  ],
-  "is_featured": false,
-  "is_looking_for_people": false,
-  "looking_for_people_note": "",
-  "blocked_code": null,
-  "totals_updated_datetime": "2022-04-05T02:46:05.325Z",
-  "total_fans": 0,
-  "total_fans_last_week": 0,
-  "total_fans_last_month": 0,
-  "total_fans_last_year": 0,
-  "total_activity": 535,
-  "total_activity_last_week": 37,
-  "total_activity_last_month": 44,
-  "total_activity_last_year": 535,
-  "tags": [],
-  "tags_colors": {
-    "tag 4": null,
-    "tag 1": null,
-    "tag 3": null,
-    "gui": null,
-    "pp": null
+    "id": 314804,
+    "name": "Sprint 3",
+    "slug": "sprint-3-207",
+    "owner": 487845,
+    "estimated_start": "2022-02-19",
+    "estimated_finish": "2022-02-25",
+    "created_date": "2022-02-03T00:44:11Z",
+    "modified_date": "2022-02-03T00:44:11Z",
+    "closed": true,
+    "disponibility": 0.0,
+    "order": 1,
+    "user_stories": [
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938514,
+        "ref": 57,
+        "milestone": 314804,
+        "is_closed": true,
+        "created_date": "2022-02-24T03:49:58Z",
+        "modified_date": "2022-02-24T03:51:20Z",
+        "finish_date": "2022-02-26T01:15:08Z",
+        "subject": "Adding roles of team members",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 2,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317145,
+        "sprint_order": 5,
+        "kanban_order": 1645674598174267,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938518,
+        "ref": 20,
+        "milestone": 314804,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:34:44Z",
+        "modified_date": "2022-02-19T05:58:34Z",
+        "finish_date": "2022-02-25T23:34:04Z",
+        "subject": "Indicating the status of sprint review and sprint goals",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 3,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317148,
+        "sprint_order": 2,
+        "kanban_order": 1644039284907625,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938521,
+        "ref": 15,
+        "milestone": 314804,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:19:01Z",
+        "modified_date": "2022-02-19T05:58:47Z",
+        "finish_date": "2022-02-25T02:30:34Z",
+        "subject": "Indicating the status of sprint planning",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 4,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317150,
+        "sprint_order": 3,
+        "kanban_order": 1644038341967810,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938523,
+        "ref": 22,
+        "milestone": 314804,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:42:56Z",
+        "modified_date": "2022-02-25T03:16:35Z",
+        "finish_date": "2022-02-25T22:02:09Z",
+        "subject": "Ability to conduct retrospectives",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 3,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317151,
+        "sprint_order": 4,
+        "kanban_order": 1644039776612869,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938527,
+        "ref": 53,
+        "milestone": 314804,
+        "is_closed": true,
+        "created_date": "2022-02-23T00:24:58Z",
+        "modified_date": "2022-02-23T00:25:29Z",
+        "finish_date": "2022-02-24T01:18:57Z",
+        "subject": "Add team details to the project",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 2,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1645575898791041,
+        "sprint_order": 6,
+        "kanban_order": 1645575898823954,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      }
+    ],
+    "total_points": 23.0,
+    "closed_points": 23.0
   },
-  "default_epic_status": 2090586,
-  "default_points": 5374001,
-  "default_us_status": 2682018,
-  "default_task_status": 2224202,
-  "default_priority": 1339083,
-  "default_severity": 2225471,
-  "default_issue_status": 3122083,
-  "default_issue_type": 1344883,
-  "default_swimlane": null,
-  "my_permissions": [
-    "view_wiki_links",
-    "view_project",
-    "view_milestones",
-    "view_epics",
-    "view_wiki_pages",
-    "view_tasks",
-    "view_issues",
-    "view_us"
-  ],
-  "i_am_owner": false,
-  "i_am_admin": false,
-  "i_am_member": false,
-  "notify_level": null,
-  "total_closed_milestones": 4,
-  "is_watcher": false,
-  "total_watchers": 11,
-  "logo_small_url": null,
-  "logo_big_url": null,
-  "is_fan": false,
-  "my_homepage": "{}",
-  "epic_statuses": [
-    {
-      "id": 2090586,
-      "name": "New",
-      "slug": "new",
-      "order": 1,
-      "is_closed": false,
-      "color": "#70728F",
-      "project_id": 445524
+  {
+    "project": 445524,
+    "project_extra_info": {
+      "name": "Biscuits-Bandlamudi-Public",
+      "slug": "jacobjose123-biscuits-bandlamudi",
+      "logo_small_url": null,
+      "id": 445524
     },
-    {
-      "id": 2090587,
-      "name": "In progress",
-      "slug": "in-progress",
-      "order": 3,
-      "is_closed": false,
-      "color": "#E47C40",
-      "project_id": 445524
+    "id": 314803,
+    "name": "Sprint 2",
+    "slug": "sprint-2-237",
+    "owner": 487845,
+    "estimated_start": "2022-02-12",
+    "estimated_finish": "2022-02-18",
+    "created_date": "2022-02-03T00:43:39Z",
+    "modified_date": "2022-02-03T00:43:39Z",
+    "closed": true,
+    "disponibility": 0.0,
+    "order": 1,
+    "user_stories": [
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938507,
+        "ref": 11,
+        "milestone": 314803,
+        "is_closed": true,
+        "created_date": "2022-02-05T04:58:42Z",
+        "modified_date": "2022-02-08T05:35:20Z",
+        "finish_date": "2022-02-19T03:15:32Z",
+        "subject": "Add epics to tool",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 7,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317137,
+        "sprint_order": 1,
+        "kanban_order": 1644037122464913,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938508,
+        "ref": 27,
+        "milestone": 314803,
+        "is_closed": true,
+        "created_date": "2022-02-05T23:30:41Z",
+        "modified_date": "2022-02-08T05:37:08Z",
+        "finish_date": "2022-02-19T05:11:49Z",
+        "subject": "Add a step to input team details to project info",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 4,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317140,
+        "sprint_order": 3,
+        "kanban_order": 1644103841960828,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938511,
+        "ref": 6,
+        "milestone": 314803,
+        "is_closed": true,
+        "created_date": "2022-02-05T02:10:52Z",
+        "modified_date": "2022-02-12T05:39:54Z",
+        "finish_date": "2022-02-19T05:00:55Z",
+        "subject": "Import details to dashboard via JSON files",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 7,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317143,
+        "sprint_order": 4,
+        "kanban_order": 1644027052302451,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938513,
+        "ref": 12,
+        "milestone": 314803,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:00:39Z",
+        "modified_date": "2022-02-12T05:32:31Z",
+        "finish_date": "2022-02-19T05:39:45Z",
+        "subject": "Add themes to tool",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 5,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317145,
+        "sprint_order": 5,
+        "kanban_order": 1644037239633124,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938516,
+        "ref": 14,
+        "milestone": 314803,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:15:53Z",
+        "modified_date": "2022-02-05T23:05:45Z",
+        "finish_date": "2022-02-19T02:17:53Z",
+        "subject": "Create custom status states to user stories and tasks",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 4,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644026194317147,
+        "sprint_order": 6,
+        "kanban_order": 1644038153272402,
+        "epics": null,
+        "points": {
+          "2715376": 5374005
+        },
+        "total_points": 5.0
+      }
+    ],
+    "total_points": 19.0,
+    "closed_points": 19.0
+  },
+  {
+    "project": 445524,
+    "project_extra_info": {
+      "name": "Biscuits-Bandlamudi-Public",
+      "slug": "jacobjose123-biscuits-bandlamudi",
+      "logo_small_url": null,
+      "id": 445524
     },
-    {
-      "id": 2090588,
-      "name": "Ready for test",
-      "slug": "ready-for-test",
-      "order": 4,
-      "is_closed": false,
-      "color": "#E4CE40",
-      "project_id": 445524
+    "id": 314802,
+    "name": "Sprint 1",
+    "slug": "sprint-1-397",
+    "owner": 487845,
+    "estimated_start": "2022-02-05",
+    "estimated_finish": "2022-02-11",
+    "created_date": "2022-02-03T00:43:16Z",
+    "modified_date": "2022-02-03T00:43:16Z",
+    "closed": true,
+    "disponibility": 0.0,
+    "order": 1,
+    "user_stories": [
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938524,
+        "ref": 7,
+        "milestone": 314802,
+        "is_closed": true,
+        "created_date": "2022-02-05T04:18:28Z",
+        "modified_date": "2022-02-08T05:33:35Z",
+        "finish_date": "2022-02-11T05:33:54Z",
+        "subject": "Updating spellings and case of variables and strings",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 5,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644034708954772,
+        "sprint_order": 1,
+        "kanban_order": 1644034708988076,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938525,
+        "ref": 13,
+        "milestone": 314802,
+        "is_closed": true,
+        "created_date": "2022-02-05T05:09:30Z",
+        "modified_date": "2022-02-08T05:35:33Z",
+        "finish_date": "2022-02-12T00:28:48Z",
+        "subject": "Add happiness to task",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 5,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644037770669512,
+        "sprint_order": 3,
+        "kanban_order": 1644037770702623,
+        "epics": null,
+        "points": {
+          "2715376": 5374004
+        },
+        "total_points": 3.0
+      },
+      {
+        "due_date": null,
+        "due_date_reason": "",
+        "due_date_status": "not_set",
+        "assigned_to": null,
+        "assigned_to_extra_info": null,
+        "status": 2682018,
+        "status_extra_info": {
+          "name": "New",
+          "color": "#70728F",
+          "is_closed": false
+        },
+        "project": 445524,
+        "project_extra_info": {
+          "name": "Biscuits-Bandlamudi-Public",
+          "slug": "jacobjose123-biscuits-bandlamudi",
+          "logo_small_url": null,
+          "id": 445524
+        },
+        "id": 3938526,
+        "ref": 26,
+        "milestone": 314802,
+        "is_closed": true,
+        "created_date": "2022-02-05T23:28:03Z",
+        "modified_date": "2022-02-08T05:36:13Z",
+        "finish_date": "2022-02-11T05:36:48Z",
+        "subject": "Add a step to input GitHub URL to project information",
+        "client_requirement": false,
+        "team_requirement": false,
+        "external_reference": null,
+        "version": 5,
+        "is_blocked": false,
+        "blocked_note": "",
+        "backlog_order": 1644039776584466,
+        "sprint_order": 4,
+        "kanban_order": 1644103683692397,
+        "epics": null,
+        "points": {
+          "2715376": 5374003
+        },
+        "total_points": 2.0
+      }
+    ],
+    "total_points": 8.0,
+    "closed_points": 8.0
+  },
+  {
+    "project": 445524,
+    "project_extra_info": {
+      "name": "Biscuits-Bandlamudi-Public",
+      "slug": "jacobjose123-biscuits-bandlamudi",
+      "logo_small_url": null,
+      "id": 445524
     },
-    {
-      "id": 2090589,
-      "name": "Done",
-      "slug": "done",
-      "order": 5,
-      "is_closed": true,
-      "color": "#A8E440",
-      "project_id": 445524
-    }
-  ],
-  "swimlanes": null,
-  "us_statuses": [
-    {
-      "id": 2682018,
-      "name": "New",
-      "order": 1,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#70728F",
-      "wip_limit": null,
-      "slug": "new",
-      "is_archived": false
-    },
-    {
-      "id": 2682019,
-      "name": "In progress",
-      "order": 3,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#E47C40",
-      "wip_limit": null,
-      "slug": "in-progress",
-      "is_archived": false
-    },
-    {
-      "id": 2682020,
-      "name": "Ready for test",
-      "order": 4,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#E4CE40",
-      "wip_limit": null,
-      "slug": "ready-for-test",
-      "is_archived": false
-    },
-    {
-      "id": 2682021,
-      "name": "Done",
-      "order": 5,
-      "is_closed": true,
-      "project_id": 445524,
-      "color": "#A8E440",
-      "wip_limit": null,
-      "slug": "done",
-      "is_archived": false
-    },
-    {
-      "id": 2682022,
-      "name": "Archived",
-      "order": 6,
-      "is_closed": true,
-      "project_id": 445524,
-      "color": "#A9AABC",
-      "wip_limit": null,
-      "slug": "archived",
-      "is_archived": true
-    }
-  ],
-  "us_duedates": [
-    {
-      "id": 489776,
-      "name": "Default",
-      "order": 1,
-      "by_default": true,
-      "color": "#9dce0a",
-      "days_to_due": null,
-      "project_id": 445524
-    },
-    {
-      "id": 489777,
-      "name": "Due soon",
-      "order": 2,
-      "by_default": false,
-      "color": "#ff9900",
-      "days_to_due": 1,
-      "project_id": 445524
-    },
-    {
-      "id": 489778,
-      "name": "Past due",
-      "order": 3,
-      "by_default": false,
-      "color": "#E44057",
-      "days_to_due": 0,
-      "project_id": 445524
-    }
-  ],
-  "points": [
-    {
-      "id": 5374001,
-      "name": "?",
-      "order": 0,
-      "value": null,
-      "project_id": 445524
-    },
-    {
-      "id": 5374002,
-      "name": "1",
-      "order": 1,
-      "value": 1,
-      "project_id": 445524
-    },
-    {
-      "id": 5374003,
-      "name": "2",
-      "order": 2,
-      "value": 2,
-      "project_id": 445524
-    },
-    {
-      "id": 5374004,
-      "name": "3",
-      "order": 3,
-      "value": 3,
-      "project_id": 445524
-    },
-    {
-      "id": 5374005,
-      "name": "5",
-      "order": 4,
-      "value": 5,
-      "project_id": 445524
-    },
-    {
-      "id": 5374006,
-      "name": "8",
-      "order": 5,
-      "value": 8,
-      "project_id": 445524
-    },
-    {
-      "id": 5374007,
-      "name": "13",
-      "order": 6,
-      "value": 13,
-      "project_id": 445524
-    },
-    {
-      "id": 5374008,
-      "name": "21",
-      "order": 7,
-      "value": 21,
-      "project_id": 445524
-    },
-    {
-      "id": 5374009,
-      "name": "34",
-      "order": 8,
-      "value": 34,
-      "project_id": 445524
-    },
-    {
-      "id": 5374010,
-      "name": "55",
-      "order": 9,
-      "value": 55,
-      "project_id": 445524
-    }
-  ],
-  "task_statuses": [
-    {
-      "id": 2224202,
-      "name": "New",
-      "order": 1,
-      "is_closed": false,
-      "color": "#70728F",
-      "project_id": 445524,
-      "slug": "new"
-    },
-    {
-      "id": 2224203,
-      "name": "In progress",
-      "order": 2,
-      "is_closed": false,
-      "color": "#E47C40",
-      "project_id": 445524,
-      "slug": "in-progress"
-    },
-    {
-      "id": 2224204,
-      "name": "Ready for test",
-      "order": 3,
-      "is_closed": false,
-      "color": "#E4CE40",
-      "project_id": 445524,
-      "slug": "ready-for-test"
-    },
-    {
-      "id": 2224205,
-      "name": "DONE",
-      "order": 4,
-      "is_closed": true,
-      "color": "#A8E440",
-      "project_id": 445524,
-      "slug": "done"
-    },
-    {
-      "id": 2224206,
-      "name": "Blocker",
-      "order": 5,
-      "is_closed": false,
-      "color": "#5178D3",
-      "project_id": 445524,
-      "slug": "blocker"
-    }
-  ],
-  "task_duedates": [
-    {
-      "id": 489610,
-      "name": "Default",
-      "order": 1,
-      "by_default": true,
-      "color": "#9dce0a",
-      "days_to_due": null,
-      "project_id": 445524
-    },
-    {
-      "id": 489611,
-      "name": "Due soon",
-      "order": 2,
-      "by_default": false,
-      "color": "#ff9900",
-      "days_to_due": 2,
-      "project_id": 445524
-    },
-    {
-      "id": 489612,
-      "name": "Past due",
-      "order": 3,
-      "by_default": false,
-      "color": "#E44057",
-      "days_to_due": 0,
-      "project_id": 445524
-    }
-  ],
-  "issue_statuses": [
-    {
-      "id": 3122083,
-      "name": "New",
-      "order": 1,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#70728F",
-      "slug": "new"
-    },
-    {
-      "id": 3122084,
-      "name": "In progress",
-      "order": 2,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#40A8E4",
-      "slug": "in-progress"
-    },
-    {
-      "id": 3122085,
-      "name": "Ready for test",
-      "order": 3,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#E4CE40",
-      "slug": "ready-for-test"
-    },
-    {
-      "id": 3122086,
-      "name": "DONE",
-      "order": 4,
-      "is_closed": true,
-      "project_id": 445524,
-      "color": "#A8E440",
-      "slug": "done"
-    },
-    {
-      "id": 3122087,
-      "name": "Needs Info",
-      "order": 5,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#E44057",
-      "slug": "needs-info"
-    },
-    {
-      "id": 3122088,
-      "name": "Rejected",
-      "order": 6,
-      "is_closed": true,
-      "project_id": 445524,
-      "color": "#A9AABC",
-      "slug": "rejected"
-    },
-    {
-      "id": 3122089,
-      "name": "Postponed",
-      "order": 7,
-      "is_closed": false,
-      "project_id": 445524,
-      "color": "#5178D3",
-      "slug": "postponed"
-    }
-  ],
-  "issue_types": [
-    {
-      "id": 1344883,
-      "name": "Bug",
-      "order": 1,
-      "project_id": 445524,
-      "color": "#E44057"
-    },
-    {
-      "id": 1344884,
-      "name": "Question",
-      "order": 2,
-      "project_id": 445524,
-      "color": "#5178D3"
-    },
-    {
-      "id": 1344885,
-      "name": "Impediment",
-      "order": 3,
-      "project_id": 445524,
-      "color": "#A9AABC"
-    }
-  ],
-  "issue_duedates": [
-    {
-      "id": 489501,
-      "name": "Default",
-      "order": 1,
-      "by_default": true,
-      "color": "#9dce0a",
-      "days_to_due": null,
-      "project_id": 445524
-    },
-    {
-      "id": 489502,
-      "name": "Due soon",
-      "order": 2,
-      "by_default": false,
-      "color": "#ff9900",
-      "days_to_due": 1,
-      "project_id": 445524
-    },
-    {
-      "id": 489503,
-      "name": "Past due",
-      "order": 3,
-      "by_default": false,
-      "color": "#E44057",
-      "days_to_due": 0,
-      "project_id": 445524
-    }
-  ],
-  "priorities": [
-    {
-      "id": 1339082,
-      "name": "Low",
-      "order": 1,
-      "project_id": 445524,
-      "color": "#A8E440"
-    },
-    {
-      "id": 1339083,
-      "name": "Normal",
-      "order": 3,
-      "project_id": 445524,
-      "color": "#E4CE40"
-    },
-    {
-      "id": 1339084,
-      "name": "High",
-      "order": 5,
-      "project_id": 445524,
-      "color": "#E47C40"
-    }
-  ],
-  "severities": [
-    {
-      "id": 2225469,
-      "name": "Wishlist",
-      "order": 1,
-      "project_id": 445524,
-      "color": "#70728F"
-    },
-    {
-      "id": 2225470,
-      "name": "Minor",
-      "order": 2,
-      "project_id": 445524,
-      "color": "#40A8E4"
-    },
-    {
-      "id": 2225471,
-      "name": "Normal",
-      "order": 3,
-      "project_id": 445524,
-      "color": "#40E47C"
-    },
-    {
-      "id": 2225472,
-      "name": "Important",
-      "order": 4,
-      "project_id": 445524,
-      "color": "#E4A240"
-    },
-    {
-      "id": 2225473,
-      "name": "Critical",
-      "order": 5,
-      "project_id": 445524,
-      "color": "#D35450"
-    }
-  ],
-  "epic_custom_attributes": [
-    {
-      "id": 12666,
-      "name": "Business Value",
-      "description": "The value to the customer if this epic is delivered",
-      "type": "dropdown",
-      "order": 1,
-      "created_date": "2022-02-03T00:36:21+00:00",
-      "modified_date": "2022-02-03T00:36:21+00:00",
-      "project_id": 445524,
-      "extra": null
-    }
-  ],
-  "userstory_custom_attributes": [
-    {
-      "id": 31682,
-      "name": "Business Value",
-      "description": "The value to the customer if this epic is delivered",
-      "order": 1,
-      "created_date": "2022-02-03T00:36:27+00:00",
-      "modified_date": "2022-02-03T00:36:27+00:00",
-      "project_id": 445524,
-      "type": "dropdown",
-      "extra": null
-    }
-  ],
-  "task_custom_attributes": [
-    {
-      "id": 19382,
-      "name": "Happiness",
-      "description": "How did working on this task affect your mood?",
-      "order": 1,
-      "created_date": "2022-02-03T00:36:31+00:00",
-      "modified_date": "2022-02-03T00:36:31+00:00",
-      "project_id": 445524,
-      "type": "dropdown",
-      "extra": null
-    }
-  ],
-  "issue_custom_attributes": null,
-  "roles": [
-    {
-      "id": 2715376,
-      "name": "Developer",
-      "slug": "ux",
-      "order": 10,
-      "computable": true,
-      "project_id": 445524,
-      "permissions": [
-        "add_issue",
-        "modify_issue",
-        "delete_issue",
-        "view_issues",
-        "add_milestone",
-        "modify_milestone",
-        "delete_milestone",
-        "view_milestones",
-        "view_project",
-        "add_task",
-        "modify_task",
-        "delete_task",
-        "view_tasks",
-        "add_us",
-        "modify_us",
-        "delete_us",
-        "view_us",
-        "add_wiki_page",
-        "modify_wiki_page",
-        "delete_wiki_page",
-        "view_wiki_pages",
-        "add_wiki_link",
-        "delete_wiki_link",
-        "view_wiki_links",
-        "view_epics",
-        "add_epic",
-        "modify_epic",
-        "delete_epic",
-        "comment_epic",
-        "comment_us",
-        "comment_task",
-        "comment_issue",
-        "comment_wiki_page"
-      ]
-    },
-    {
-      "id": 2715377,
-      "name": "Product Owner",
-      "slug": "product-owner",
-      "order": 50,
-      "computable": false,
-      "project_id": 445524,
-      "permissions": [
-        "add_issue",
-        "modify_issue",
-        "delete_issue",
-        "view_issues",
-        "add_milestone",
-        "modify_milestone",
-        "delete_milestone",
-        "view_milestones",
-        "view_project",
-        "add_task",
-        "modify_task",
-        "delete_task",
-        "view_tasks",
-        "add_us",
-        "modify_us",
-        "delete_us",
-        "view_us",
-        "add_wiki_page",
-        "modify_wiki_page",
-        "delete_wiki_page",
-        "view_wiki_pages",
-        "add_wiki_link",
-        "delete_wiki_link",
-        "view_wiki_links",
-        "view_epics",
-        "add_epic",
-        "modify_epic",
-        "delete_epic",
-        "comment_epic",
-        "comment_us",
-        "comment_task",
-        "comment_issue",
-        "comment_wiki_page"
-      ]
-    },
-    {
-      "id": 2715378,
-      "name": "Stakeholder",
-      "slug": "stakeholder",
-      "order": 60,
-      "computable": false,
-      "project_id": 445524,
-      "permissions": [
-        "add_issue",
-        "modify_issue",
-        "delete_issue",
-        "view_issues",
-        "view_milestones",
-        "view_project",
-        "view_tasks",
-        "view_us",
-        "modify_wiki_page",
-        "view_wiki_pages",
-        "add_wiki_link",
-        "delete_wiki_link",
-        "view_wiki_links",
-        "view_epics",
-        "comment_epic",
-        "comment_us",
-        "comment_task",
-        "comment_issue",
-        "comment_wiki_page"
-      ]
-    }
-  ],
-  "total_memberships": 2,
-  "is_out_of_owner_limits": false,
-  "milestones": [
-    {
-      "id": 314801,
-      "slug": "ramp-up-7",
-      "name": "Ramp-up",
-      "closed": true
-    },
-    {
-      "id": 314802,
-      "slug": "sprint-1-397",
-      "name": "Sprint 1",
-      "closed": true
-    },
-    {
-      "id": 314803,
-      "slug": "sprint-2-237",
-      "name": "Sprint 2",
-      "closed": true
-    },
-    {
-      "id": 314804,
-      "slug": "sprint-3-207",
-      "name": "Sprint 3",
-      "closed": true
-    },
-    {
-      "id": 314805,
-      "slug": "sprint-4-119",
-      "name": "Sprint 4",
-      "closed": false
-    }
-  ]
-}
+    "id": 314801,
+    "name": "Ramp-up",
+    "slug": "ramp-up-7",
+    "owner": 487845,
+    "estimated_start": "2022-01-29",
+    "estimated_finish": "2022-02-04",
+    "created_date": "2022-02-03T00:42:48Z",
+    "modified_date": "2022-02-03T00:42:48Z",
+    "closed": true,
+    "disponibility": 0.0,
+    "order": 1,
+    "user_stories": [],
+    "total_points": null,
+    "closed_points": null
+  }
+]

@@ -1,4 +1,4 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

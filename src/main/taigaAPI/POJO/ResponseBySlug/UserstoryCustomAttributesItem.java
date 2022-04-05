@@ -1,8 +1,8 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TaskCustomAttributesItem{
+public class UserstoryCustomAttributesItem{
 
 	@JsonProperty("project_id")
 	private int projectId;

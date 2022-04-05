@@ -1,8 +1,11 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PointsItem{
+public class IssueTypesItem{
+
+	@JsonProperty("color")
+	private String color;
 
 	@JsonProperty("project_id")
 	private int projectId;
@@ -13,11 +16,16 @@ public class PointsItem{
 	@JsonProperty("id")
 	private int id;
 
-	@JsonProperty("value")
-	private Object value;
-
 	@JsonProperty("order")
 	private int order;
+
+	public void setColor(String color){
+		this.color = color;
+	}
+
+	public String getColor(){
+		return color;
+	}
 
 	public void setProjectId(int projectId){
 		this.projectId = projectId;
@@ -41,14 +49,6 @@ public class PointsItem{
 
 	public int getId(){
 		return id;
-	}
-
-	public void setValue(Object value){
-		this.value = value;
-	}
-
-	public Object getValue(){
-		return value;
 	}
 
 	public void setOrder(int order){

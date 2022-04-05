@@ -1,8 +1,8 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class IssueDuedatesItem{
+public class UsDuedatesItem{
 
 	@JsonProperty("by_default")
 	private boolean byDefault;

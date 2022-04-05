@@ -1,23 +1,14 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MembersItem{
-
-	@JsonProperty("role_name")
-	private String roleName;
-
-	@JsonProperty("role")
-	private int role;
-
-	@JsonProperty("full_name")
-	private String fullName;
+public class Owner{
 
 	@JsonProperty("is_active")
 	private boolean isActive;
 
-	@JsonProperty("color")
-	private String color;
+	@JsonProperty("big_photo")
+	private Object bigPhoto;
 
 	@JsonProperty("photo")
 	private Object photo;
@@ -34,30 +25,6 @@ public class MembersItem{
 	@JsonProperty("username")
 	private String username;
 
-	public void setRoleName(String roleName){
-		this.roleName = roleName;
-	}
-
-	public String getRoleName(){
-		return roleName;
-	}
-
-	public void setRole(int role){
-		this.role = role;
-	}
-
-	public int getRole(){
-		return role;
-	}
-
-	public void setFullName(String fullName){
-		this.fullName = fullName;
-	}
-
-	public String getFullName(){
-		return fullName;
-	}
-
 	public void setIsActive(boolean isActive){
 		this.isActive = isActive;
 	}
@@ -66,12 +33,12 @@ public class MembersItem{
 		return isActive;
 	}
 
-	public void setColor(String color){
-		this.color = color;
+	public void setBigPhoto(Object bigPhoto){
+		this.bigPhoto = bigPhoto;
 	}
 
-	public String getColor(){
-		return color;
+	public Object getBigPhoto(){
+		return bigPhoto;
 	}
 
 	public void setPhoto(Object photo){

@@ -1,15 +1,11 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
-import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class RolesItem{
+public class PointsItem{
 
 	@JsonProperty("project_id")
 	private int projectId;
-
-	@JsonProperty("permissions")
-	private List<String> permissions;
 
 	@JsonProperty("name")
 	private String name;
@@ -17,11 +13,8 @@ public class RolesItem{
 	@JsonProperty("id")
 	private int id;
 
-	@JsonProperty("computable")
-	private boolean computable;
-
-	@JsonProperty("slug")
-	private String slug;
+	@JsonProperty("value")
+	private Object value;
 
 	@JsonProperty("order")
 	private int order;
@@ -32,14 +25,6 @@ public class RolesItem{
 
 	public int getProjectId(){
 		return projectId;
-	}
-
-	public void setPermissions(List<String> permissions){
-		this.permissions = permissions;
-	}
-
-	public List<String> getPermissions(){
-		return permissions;
 	}
 
 	public void setName(String name){
@@ -58,20 +43,12 @@ public class RolesItem{
 		return id;
 	}
 
-	public void setComputable(boolean computable){
-		this.computable = computable;
+	public void setValue(Object value){
+		this.value = value;
 	}
 
-	public boolean isComputable(){
-		return computable;
-	}
-
-	public void setSlug(String slug){
-		this.slug = slug;
-	}
-
-	public String getSlug(){
-		return slug;
+	public Object getValue(){
+		return value;
 	}
 
 	public void setOrder(int order){

@@ -1,8 +1,8 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class IssueTypesItem{
+public class IssueStatusesItem{
 
 	@JsonProperty("color")
 	private String color;
@@ -16,8 +16,14 @@ public class IssueTypesItem{
 	@JsonProperty("id")
 	private int id;
 
+	@JsonProperty("slug")
+	private String slug;
+
 	@JsonProperty("order")
 	private int order;
+
+	@JsonProperty("is_closed")
+	private boolean isClosed;
 
 	public void setColor(String color){
 		this.color = color;
@@ -51,11 +57,27 @@ public class IssueTypesItem{
 		return id;
 	}
 
+	public void setSlug(String slug){
+		this.slug = slug;
+	}
+
+	public String getSlug(){
+		return slug;
+	}
+
 	public void setOrder(int order){
 		this.order = order;
 	}
 
 	public int getOrder(){
 		return order;
+	}
+
+	public void setIsClosed(boolean isClosed){
+		this.isClosed = isClosed;
+	}
+
+	public boolean isIsClosed(){
+		return isClosed;
 	}
 }

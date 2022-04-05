@@ -1,6 +1,6 @@
 package taigaAPI.utility;
 
-import taigaAPI.POJO.ResponseBySlug;
+import taigaAPI.POJO.ResponseBySlug.ResponseBySlug;
 
 public class CurrentSession {
     private String authenticationToke;

@@ -1,8 +1,11 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class PrioritiesItem{
+public class TaskDuedatesItem{
+
+	@JsonProperty("by_default")
+	private boolean byDefault;
 
 	@JsonProperty("color")
 	private String color;
@@ -16,8 +19,19 @@ public class PrioritiesItem{
 	@JsonProperty("id")
 	private int id;
 
+	@JsonProperty("days_to_due")
+	private Object daysToDue;
+
 	@JsonProperty("order")
 	private int order;
+
+	public void setByDefault(boolean byDefault){
+		this.byDefault = byDefault;
+	}
+
+	public boolean isByDefault(){
+		return byDefault;
+	}
 
 	public void setColor(String color){
 		this.color = color;
@@ -49,6 +63,14 @@ public class PrioritiesItem{
 
 	public int getId(){
 		return id;
+	}
+
+	public void setDaysToDue(Object daysToDue){
+		this.daysToDue = daysToDue;
+	}
+
+	public Object getDaysToDue(){
+		return daysToDue;
 	}
 
 	public void setOrder(int order){

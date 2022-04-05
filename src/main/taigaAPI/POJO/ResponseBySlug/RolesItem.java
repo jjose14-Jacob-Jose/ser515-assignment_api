@@ -1,17 +1,15 @@
-package taigaAPI.POJO;
+package taigaAPI.POJO.ResponseBySlug;
 
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TaskDuedatesItem{
-
-	@JsonProperty("by_default")
-	private boolean byDefault;
-
-	@JsonProperty("color")
-	private String color;
+public class RolesItem{
 
 	@JsonProperty("project_id")
 	private int projectId;
+
+	@JsonProperty("permissions")
+	private List<String> permissions;
 
 	@JsonProperty("name")
 	private String name;
@@ -19,27 +17,14 @@ public class TaskDuedatesItem{
 	@JsonProperty("id")
 	private int id;
 
-	@JsonProperty("days_to_due")
-	private Object daysToDue;
+	@JsonProperty("computable")
+	private boolean computable;
+
+	@JsonProperty("slug")
+	private String slug;
 
 	@JsonProperty("order")
 	private int order;
-
-	public void setByDefault(boolean byDefault){
-		this.byDefault = byDefault;
-	}
-
-	public boolean isByDefault(){
-		return byDefault;
-	}
-
-	public void setColor(String color){
-		this.color = color;
-	}
-
-	public String getColor(){
-		return color;
-	}
 
 	public void setProjectId(int projectId){
 		this.projectId = projectId;
@@ -47,6 +32,14 @@ public class TaskDuedatesItem{
 
 	public int getProjectId(){
 		return projectId;
+	}
+
+	public void setPermissions(List<String> permissions){
+		this.permissions = permissions;
+	}
+
+	public List<String> getPermissions(){
+		return permissions;
 	}
 
 	public void setName(String name){
@@ -65,12 +58,20 @@ public class TaskDuedatesItem{
 		return id;
 	}
 
-	public void setDaysToDue(Object daysToDue){
-		this.daysToDue = daysToDue;
+	public void setComputable(boolean computable){
+		this.computable = computable;
 	}
 
-	public Object getDaysToDue(){
-		return daysToDue;
+	public boolean isComputable(){
+		return computable;
+	}
+
+	public void setSlug(String slug){
+		this.slug = slug;
+	}
+
+	public String getSlug(){
+		return slug;
 	}
 
 	public void setOrder(int order){
