@@ -1,17 +1,17 @@
-package taigaAPI.POJO.MilestonesByProject;
+package taigaAPI.POJO.UserstoryBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class AssignedToExtraInfo{
+public class OwnerExtraInfo{
 
 	@JsonProperty("is_active")
 	private boolean isActive;
 
 	@JsonProperty("big_photo")
-	private String bigPhoto;
+	private Object bigPhoto;
 
 	@JsonProperty("photo")
-	private String photo;
+	private Object photo;
 
 	@JsonProperty("id")
 	private int id;
@@ -33,19 +33,19 @@ public class AssignedToExtraInfo{
 		return isActive;
 	}
 
-	public void setBigPhoto(String bigPhoto){
+	public void setBigPhoto(Object bigPhoto){
 		this.bigPhoto = bigPhoto;
 	}
 
-	public String getBigPhoto(){
+	public Object getBigPhoto(){
 		return bigPhoto;
 	}
 
-	public void setPhoto(String photo){
+	public void setPhoto(Object photo){
 		this.photo = photo;
 	}
 
-	public String getPhoto(){
+	public Object getPhoto(){
 		return photo;
 	}
 

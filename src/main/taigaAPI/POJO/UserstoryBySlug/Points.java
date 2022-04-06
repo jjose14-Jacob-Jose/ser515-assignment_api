@@ -1,4 +1,4 @@
-package taigaAPI.POJO.MilestonesByProject;
+package taigaAPI.POJO.UserstoryBySlug;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

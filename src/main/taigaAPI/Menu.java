@@ -1,20 +1,24 @@
 package taigaAPI;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
-import taigaAPI.POJO.MilestonesByProject.MilestonesByProject;
+import taigaAPI.POJO.MilestonesBySlug.MilestonesByProject;
 import taigaAPI.POJO.ResponseBySlug.MembersItem;
 import taigaAPI.POJO.ResponseBySlug.ResponseBySlug;
+import taigaAPI.POJO.UserstoryBySlug.UserStoryBySlug;
 import taigaAPI.utility.Constants;
 import taigaAPI.utility.CurrentSession;
 import taigaAPI.utility.InputOutput;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Menu {
 
     private static final String MENU_TEXT_INPUT_INSTRUCTION_INTEGER = "Please enter the corresponding index number.";
@@ -91,7 +95,8 @@ public class Menu {
 
             switch (userInput) {
                 case 1: displayAllSprints();
-                case 2: break;
+                        break;
+                case 2: displayAllUserStories();
                 case 3: break;
                 default: InputOutput.displayOnConsole(MENU_TEXT_INVALID_INPUT);
             }
@@ -113,7 +118,7 @@ public class Menu {
                     + "Finished Points" + "\t";
 
             InputOutput.displayOnConsole(stringToBeDisplayed);
-            int index = 0;
+            int index = 1;
             for (JsonElement jsonElement : jsonArray) {
 
                 milestonesByProject = new ObjectMapper().readValue(jsonElement.toString(), MilestonesByProject.class);
@@ -126,12 +131,92 @@ public class Menu {
                         + milestonesByProject.getTotalPoints() + "\t"
                         + milestonesByProject.getClosedPoints();
                 InputOutput.displayOnConsole(stringToBeDisplayed);
+                index++;
             }
         } catch (JsonProcessingException e) {
             InputOutput.displayOnConsole("The slug you entered is wrong. Can't establish connection.");
         }
 
     }
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
+    private void displayAllUserStories() {
+
+        String finalURL = Constants.URL_TAIGA_PROJECT_BY_USERSTORIES + currentSession.getResponseBySlug().getId();
+        MilestonesByProject milestonesByProject;
+
+        JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
+        String stringToBeDisplayed = "#" + "\t"
+                + "UserStory Name" + "\t"
+                + "Completion Status" + "\t"
+                + "Date of creation" + "\t"
+                + "Date moved to sprint" + "\t"
+                + "Sprint" + "\t";
+
+        InputOutput.displayOnConsole(stringToBeDisplayed);
+        int index = 0;
+        for (JsonElement jsonElement : jsonArray) {
+
+            JsonObject jsonObjectHoldingUserStory = jsonElement.getAsJsonObject();
+            String userStoryName = String.valueOf(jsonObjectHoldingUserStory.get("subject"));
+            String userStoryCompletionStatus = String.valueOf(jsonObjectHoldingUserStory.get("is_closed"));
+            String userStoryCreationDate = String.valueOf(jsonObjectHoldingUserStory.get("created_date"));
+            String userStoryDateMovedToSprint = String.valueOf(jsonObjectHoldingUserStory.get("modified_date"));
+            String userStorySprint = String.valueOf(jsonObjectHoldingUserStory.get("milestone"));
+
+            userStoryCompletionStatus = (userStoryCompletionStatus.equalsIgnoreCase("TRUE") ? Constants.MSG_USER_STORY_COMPLETED : Constants.MSG_USER_STORY_NOT_COMPLETED);
+
+            stringToBeDisplayed = index + "\t"
+                    + userStoryName + "\t"
+                    + userStoryCompletionStatus + "\t"
+                    + userStoryCreationDate + "\t"
+                    + userStoryDateMovedToSprint+ "\t"
+                    + userStorySprint;
+            InputOutput.displayOnConsole(stringToBeDisplayed);
+        }
+
+    }
+
+//    private void displayAllUserStoriesOld() {
+//
+//        String finalURL = Constants.URL_TAIGA_PROJECT_BY_USERSTORIES + currentSession.getResponseBySlug().getId();
+////        UserstoryBySlug [] userstoryBySlug;
+//
+//        JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
+//        String stringToBeDisplayed = "#" + "\t"
+//                + "UserStory Name" + "\t"
+//                + "Completion Status" + "\t"
+//                + "Date of creation" + "\t"
+//                + "Date moved to sprint" + "\t"
+//                + "Sprint" + "\t";
+//
+//        InputOutput.displayOnConsole(stringToBeDisplayed);
+////        int index = 0;
+//        for(int index=0; index<jsonArray.size(); index++) {
+////        for (JsonElement jsonElement : jsonArray) {
+//
+//            JsonObject jsonElement = jsonArray.get(index).getAsJsonObject();
+//
+//            ObjectMapper objectMapper = new ObjectMapper();
+//            objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+//            try {
+////                userstoryBySlug = objectMapper.readValue(jsonElement.toString(), UserstoryBySlug[].class);
+//
+////                String userStoryCompletionStatus = (userStoriesBySlug.isIsClosed() ? Constants.MSG_USER_STORY_COMPLETED : Constants.MSG_USER_STORY_NOT_COMPLETED);
+//
+////                stringToBeDisplayed = index + "\t"
+////                        + userStoriesBySlugItem.getSubject() + "\t"
+////                        + userStoryCompletionStatus + "\t"
+////                        + userStoriesBySlugItem.getCreatedDate() + "\t"
+////                        + userStoriesBySlugItem.getModifiedDate() + "\t"
+////                        + userStoriesBySlugItem.getMilestoneName();
+//                InputOutput.displayOnConsole(stringToBeDisplayed);
+//            } catch (JsonProcessingException jsonProcessingException) {
+//
+//            }
+//        }
+//
+//    }
 
 
 
