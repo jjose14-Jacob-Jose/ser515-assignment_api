@@ -20,7 +20,7 @@
                         <manifest>
 
                             <classpathPrefix>target/</classpathPrefix>
-                            <mainClass>taigaAPI.TaigaAPI</mainClass>
+                            <mainClass>TaigaAPI</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
