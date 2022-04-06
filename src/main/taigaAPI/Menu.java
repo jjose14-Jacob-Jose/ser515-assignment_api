@@ -28,10 +28,12 @@ public class Menu {
     private static final String MENU_TEXT_LOGIN = "1 - Login via credentials" + "\n"
             + "2 - Slug";
     private static final String MENU_TEXT_PROJECT = "1 - List all Sprints" + "\n"
-            + "2 - List all User Stories" + "\n"
-            + "3 - Get a specific Sprint's information";
+            + "2 - Get User Stories of a specific sprint. " + "\n"
+            + "3 - List all User Stories in the project.";
+
     private static final String MENU_TEXT_SLUG = "Enter project's slug:";
     private static final String MENU_TEXT_INVALID_INPUT = "Your input is not valid.";
+    private static final String MENU_TEXT_ENTER_SPRINT_ID = "Enter the ID number of the Sprint whose user stories you want see";
 
     private static CurrentSession currentSession = new CurrentSession();
 
@@ -76,12 +78,12 @@ public class Menu {
     }
 
     private void displayMembersInProject() {
-        String stringToBeDisplayed = "#" +  "\t" + "Member Full Name" + "\t" + "Role";
+        String stringToBeDisplayed = "#" +  Constants.MSG_CONSOLE_LINE_SEPARATOR + "Member Full Name" + Constants.MSG_CONSOLE_LINE_SEPARATOR + "Role";
 
-        InputOutput.displayOnConsole(stringToBeDisplayed);
+        InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
         int index = 1;
         for(MembersItem memberItem: currentSession.getResponseBySlug().getMembers()) {
-            stringToBeDisplayed = index + "\t" + memberItem.getFullName() + "\t" + memberItem.getRoleName();
+            stringToBeDisplayed = index + Constants.MSG_CONSOLE_LINE_SEPARATOR + memberItem.getFullName() + Constants.MSG_CONSOLE_LINE_SEPARATOR + memberItem.getRoleName();
             InputOutput.displayOnConsole(stringToBeDisplayed);
         }
     }
@@ -96,8 +98,12 @@ public class Menu {
             switch (userInput) {
                 case 1: displayAllSprints();
                         break;
-                case 2: displayAllUserStories();
-                case 3: break;
+                case 2: displayAllSprints();
+                        int sprintIDUserInput = InputOutput.readIntegerFromConsoleString(MENU_TEXT_ENTER_SPRINT_ID);
+                        displayUserStoriesOfASprint(sprintIDUserInput);
+                        break;
+                case 3:displayAllUserStories();
+                        break;
                 default: InputOutput.displayOnConsole(MENU_TEXT_INVALID_INPUT);
             }
         }while(userInput != Constants.CODE_TERMINATE);
@@ -110,25 +116,27 @@ public class Menu {
 
         JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
         try {
-            String stringToBeDisplayed = "#" + "\t"
-                    + "Sprint Name" + "\t"
-                    + "Start Date" + "\t"
-                    + "End Date" + "\t"
-                    + "Total Points" + "\t"
-                    + "Finished Points" + "\t";
+            String stringToBeDisplayed = "#" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "Sprint ID" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "Sprint Name" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "Start Date" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "End Date" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "Total Points" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + "Finished Points" + Constants.MSG_CONSOLE_LINE_SEPARATOR;
 
-            InputOutput.displayOnConsole(stringToBeDisplayed);
+            InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
             int index = 1;
             for (JsonElement jsonElement : jsonArray) {
 
                 milestonesByProject = new ObjectMapper().readValue(jsonElement.toString(), MilestonesByProject.class);
 
 
-                stringToBeDisplayed = index + "\t"
-                        + milestonesByProject.getName() + "\t"
-                        + milestonesByProject.getEstimatedStart() + "\t"
-                        + milestonesByProject.getEstimatedFinish() + "\t"
-                        + milestonesByProject.getTotalPoints() + "\t"
+                stringToBeDisplayed = index + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + milestonesByProject.getId() + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + milestonesByProject.getName() + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + milestonesByProject.getEstimatedStart() + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + milestonesByProject.getEstimatedFinish() + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + milestonesByProject.getTotalPoints() + Constants.MSG_CONSOLE_LINE_SEPARATOR
                         + milestonesByProject.getClosedPoints();
                 InputOutput.displayOnConsole(stringToBeDisplayed);
                 index++;
@@ -146,18 +154,20 @@ public class Menu {
         MilestonesByProject milestonesByProject;
 
         JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
-        String stringToBeDisplayed = "#" + "\t"
-                + "UserStory Name" + "\t"
-                + "Completion Status" + "\t"
-                + "Date of creation" + "\t"
-                + "Date moved to sprint" + "\t"
-                + "Sprint" + "\t";
+        String stringToBeDisplayed = "#" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "UserStory ID" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "UserStory Name" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Completion Status" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Date of creation" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Date moved to sprint" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Sprint" + Constants.MSG_CONSOLE_LINE_SEPARATOR;
 
-        InputOutput.displayOnConsole(stringToBeDisplayed);
+        InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
         int index = 0;
         for (JsonElement jsonElement : jsonArray) {
 
             JsonObject jsonObjectHoldingUserStory = jsonElement.getAsJsonObject();
+            String userStoryID = String.valueOf(jsonObjectHoldingUserStory.get("id"));
             String userStoryName = String.valueOf(jsonObjectHoldingUserStory.get("subject"));
             String userStoryCompletionStatus = String.valueOf(jsonObjectHoldingUserStory.get("is_closed"));
             String userStoryCreationDate = String.valueOf(jsonObjectHoldingUserStory.get("created_date"));
@@ -166,58 +176,66 @@ public class Menu {
 
             userStoryCompletionStatus = (userStoryCompletionStatus.equalsIgnoreCase("TRUE") ? Constants.MSG_USER_STORY_COMPLETED : Constants.MSG_USER_STORY_NOT_COMPLETED);
 
-            stringToBeDisplayed = index + "\t"
-                    + userStoryName + "\t"
-                    + userStoryCompletionStatus + "\t"
-                    + userStoryCreationDate + "\t"
-                    + userStoryDateMovedToSprint+ "\t"
+            stringToBeDisplayed = index + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + userStoryID + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + userStoryName + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + userStoryCompletionStatus + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + userStoryCreationDate + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                    + userStoryDateMovedToSprint+ Constants.MSG_CONSOLE_LINE_SEPARATOR
                     + userStorySprint;
             InputOutput.displayOnConsole(stringToBeDisplayed);
+            index++;
         }
 
     }
 
-//    private void displayAllUserStoriesOld() {
-//
-//        String finalURL = Constants.URL_TAIGA_PROJECT_BY_USERSTORIES + currentSession.getResponseBySlug().getId();
-////        UserstoryBySlug [] userstoryBySlug;
-//
-//        JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
-//        String stringToBeDisplayed = "#" + "\t"
-//                + "UserStory Name" + "\t"
-//                + "Completion Status" + "\t"
-//                + "Date of creation" + "\t"
-//                + "Date moved to sprint" + "\t"
-//                + "Sprint" + "\t";
-//
-//        InputOutput.displayOnConsole(stringToBeDisplayed);
-////        int index = 0;
-//        for(int index=0; index<jsonArray.size(); index++) {
-////        for (JsonElement jsonElement : jsonArray) {
-//
-//            JsonObject jsonElement = jsonArray.get(index).getAsJsonObject();
-//
-//            ObjectMapper objectMapper = new ObjectMapper();
-//            objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
-//            try {
-////                userstoryBySlug = objectMapper.readValue(jsonElement.toString(), UserstoryBySlug[].class);
-//
-////                String userStoryCompletionStatus = (userStoriesBySlug.isIsClosed() ? Constants.MSG_USER_STORY_COMPLETED : Constants.MSG_USER_STORY_NOT_COMPLETED);
-//
-////                stringToBeDisplayed = index + "\t"
-////                        + userStoriesBySlugItem.getSubject() + "\t"
-////                        + userStoryCompletionStatus + "\t"
-////                        + userStoriesBySlugItem.getCreatedDate() + "\t"
-////                        + userStoriesBySlugItem.getModifiedDate() + "\t"
-////                        + userStoriesBySlugItem.getMilestoneName();
-//                InputOutput.displayOnConsole(stringToBeDisplayed);
-//            } catch (JsonProcessingException jsonProcessingException) {
-//
-//            }
-//        }
-//
-//    }
+    private void displayUserStoriesOfASprint(int sprintID) {
 
+        String finalURL = Constants.URL_TAIGA_PROJECT_BY_USERSTORIES + currentSession.getResponseBySlug().getId();
+        MilestonesByProject milestonesByProject;
+
+        JsonArray jsonArray = Connector.getResponseFromUrlAsJsonArrayGET(finalURL);
+        String stringToBeDisplayed = "#" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "UserStory ID" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "UserStory Name" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Completion Status" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Date of creation" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Date moved to sprint" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                + "Sprint" + Constants.MSG_CONSOLE_LINE_SEPARATOR;
+
+        InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
+        int index = 0;
+        for (JsonElement jsonElement : jsonArray) {
+
+            JsonObject jsonObjectHoldingUserStory = jsonElement.getAsJsonObject();
+            String userStorySprintID = String.valueOf(jsonObjectHoldingUserStory.get("milestone"));
+
+            if(userStorySprintID.equalsIgnoreCase(String.valueOf(sprintID))) {
+                String userStoryID = String.valueOf(jsonObjectHoldingUserStory.get("id"));
+                String userStoryName = String.valueOf(jsonObjectHoldingUserStory.get("subject"));
+                String userStoryCompletionStatus = String.valueOf(jsonObjectHoldingUserStory.get("is_closed"));
+                String userStoryCreationDate = String.valueOf(jsonObjectHoldingUserStory.get("created_date"));
+                String userStoryDateMovedToSprint = String.valueOf(jsonObjectHoldingUserStory.get("modified_date"));
+                String userStorySprint = String.valueOf(jsonObjectHoldingUserStory.get("milestone"));
+
+                userStoryCompletionStatus = (userStoryCompletionStatus.equalsIgnoreCase("TRUE") ? Constants.MSG_USER_STORY_COMPLETED : Constants.MSG_USER_STORY_NOT_COMPLETED);
+
+                stringToBeDisplayed = index + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStoryID + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStoryName + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStoryCompletionStatus + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStoryCreationDate + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStoryDateMovedToSprint+ Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + userStorySprint;
+                InputOutput.displayOnConsole(stringToBeDisplayed);
+                index++;
+
+            }
+
+
+        }
+
+    }
 
 
 }

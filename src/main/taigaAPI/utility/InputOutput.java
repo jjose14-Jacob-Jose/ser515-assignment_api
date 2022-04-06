@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 
+import static taigaAPI.utility.Constants.MSG_CONSOLE_HEADING_BOUNDARY;
+
 public class InputOutput {
     private static BufferedReader bufferedReader;
     private static InputStreamReader inputStreamReader;
@@ -18,6 +20,13 @@ public class InputOutput {
     public static void displayOnConsole(String stringToBeDisplayed) {
         initializeMembers();
         System.out.println(stringToBeDisplayed);
+    }
+
+    public static void displayHeadingOnConsole(String stringToBeDisplayed) {
+        initializeMembers();
+        System.out.println(stringToBeDisplayed);
+        System.out.println(MSG_CONSOLE_HEADING_BOUNDARY);
+
     }
 
     public static String readTextFromConsoleString(String promptToBeDisplayed) {

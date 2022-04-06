@@ -20,6 +20,9 @@ public class Constants {
     public static final String MSG_USER_STORY_COMPLETED = "Done/Completed";
     public static final String MSG_USER_STORY_NOT_COMPLETED = "Not Completed";
 
+    public static final String MSG_CONSOLE_LINE_SEPARATOR = "  ";
+    public static final String MSG_CONSOLE_HEADING_BOUNDARY = "***********************************************";
+
 
 
 }
