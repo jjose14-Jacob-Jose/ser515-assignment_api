@@ -269,7 +269,7 @@ public class Menu {
                 if(userAssignedTasks.containsKey(userName)) {
                     userAssignedTasks.put(userName, userAssignedTasks.get(userName) + 1);
                 } else if(userName.length()>3){
-                    userAssignedTasks.put(userName, 0);
+                    userAssignedTasks.put(userName, 1);
                 }
             }
             if(userAssignedTasks.keySet().size()>0) {
