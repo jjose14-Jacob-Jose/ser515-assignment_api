@@ -24,6 +24,7 @@ public class InputOutput {
 
     public static void displayHeadingOnConsole(String stringToBeDisplayed) {
         initializeMembers();
+        System.out.println(MSG_CONSOLE_HEADING_BOUNDARY);
         System.out.println(stringToBeDisplayed);
         System.out.println(MSG_CONSOLE_HEADING_BOUNDARY);
 
@@ -45,6 +46,17 @@ public class InputOutput {
         try{
             initializeMembers();
             displayOnConsole(promptToBeDisplayed);
+            String userInput = bufferedReader.readLine();
+            return Integer.parseInt(userInput);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return Constants.CODE_RESPONSE_FAIL;
+        }
+    }
+
+    public static int readIntegerFromConsoleString() {
+        try{
+            initializeMembers();
             String userInput = bufferedReader.readLine();
             return Integer.parseInt(userInput);
         } catch (IOException e) {

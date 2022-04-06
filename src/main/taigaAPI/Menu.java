@@ -11,11 +11,18 @@ import com.google.gson.JsonObject;
 import taigaAPI.POJO.MilestonesBySlug.MilestonesByProject;
 import taigaAPI.POJO.ResponseBySlug.MembersItem;
 import taigaAPI.POJO.ResponseBySlug.ResponseBySlug;
+import taigaAPI.POJO.TasksOnASprint.AssignedToItem;
+import taigaAPI.POJO.TasksOnASprint.TasksOnASprint;
 import taigaAPI.POJO.UserstoryBySlug.UserStoryBySlug;
 import taigaAPI.utility.Constants;
 import taigaAPI.utility.CurrentSession;
 import taigaAPI.utility.InputOutput;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static taigaAPI.utility.Constants.MSG_CONSOLE_NEW_LINE;
 
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -29,7 +36,8 @@ public class Menu {
             + "2 - Slug";
     private static final String MENU_TEXT_PROJECT = "1 - List all Sprints" + "\n"
             + "2 - Get User Stories of a specific sprint. " + "\n"
-            + "3 - List all User Stories in the project.";
+            + "3 - List all User Stories in the project." + "\n"
+            + "4 - List tasks a team member was assigned in a sprint.";
 
     private static final String MENU_TEXT_SLUG = "Enter project's slug:";
     private static final String MENU_TEXT_INVALID_INPUT = "Your input is not valid.";
@@ -37,16 +45,17 @@ public class Menu {
 
     private static CurrentSession currentSession = new CurrentSession();
 
-    private String concatenateStrings (String prefix, String middle, String suffix) {
-        return prefix + "\n" + middle + "\n" + suffix;
+    private String concatenateStrings (String prefix, String middle, String suffix, String concatenationSymbol) {
+        return prefix + concatenationSymbol + middle + concatenationSymbol + suffix;
     }
 
     public void showMainMenu() {
 
         int userInput = Constants.CODE_TERMINATE;
         do {
-            String stringToBeDisplayed = concatenateStrings(MENU_TEXT_INPUT_INSTRUCTION_INTEGER, MENU_TEXT_LOGIN, MENU_TEXT_INPUT_INSTRUCTION_FOR_EXITING);
-            userInput = InputOutput.readIntegerFromConsoleString(stringToBeDisplayed);
+            String stringToBeDisplayed = concatenateStrings(MENU_TEXT_INPUT_INSTRUCTION_INTEGER, MENU_TEXT_LOGIN, MENU_TEXT_INPUT_INSTRUCTION_FOR_EXITING, MSG_CONSOLE_NEW_LINE);
+            InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
+            userInput = InputOutput.readIntegerFromConsoleString();
 
             switch (userInput) {
                 case 1: break;
@@ -92,17 +101,22 @@ public class Menu {
 
         int userInput = Constants.CODE_TERMINATE;
         do {
-            String stringToBeDisplayed = concatenateStrings(MENU_TEXT_INPUT_INSTRUCTION_INTEGER, MENU_TEXT_PROJECT, MENU_TEXT_INPUT_INSTRUCTION_FOR_EXITING);
-            userInput = InputOutput.readIntegerFromConsoleString(stringToBeDisplayed);
+            String stringToBeDisplayed = concatenateStrings(MENU_TEXT_INPUT_INSTRUCTION_INTEGER, MENU_TEXT_PROJECT, MENU_TEXT_INPUT_INSTRUCTION_FOR_EXITING, MSG_CONSOLE_NEW_LINE);
+            InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
+            userInput = InputOutput.readIntegerFromConsoleString();
 
             switch (userInput) {
                 case 1: displayAllSprints();
                         break;
                 case 2: displayAllSprints();
-                        int sprintIDUserInput = InputOutput.readIntegerFromConsoleString(MENU_TEXT_ENTER_SPRINT_ID);
-                        displayUserStoriesOfASprint(sprintIDUserInput);
+                        userInput = InputOutput.readIntegerFromConsoleString(MENU_TEXT_ENTER_SPRINT_ID);
+                        displayUserStoriesOfASprint(userInput);
                         break;
                 case 3:displayAllUserStories();
+                        break;
+                case 4: displayAllSprints();
+                        userInput = InputOutput.readIntegerFromConsoleString(MENU_TEXT_ENTER_SPRINT_ID);
+                        displayTasksAssignedToUsersInASprint(userInput);
                         break;
                 default: InputOutput.displayOnConsole(MENU_TEXT_INVALID_INPUT);
             }
@@ -233,6 +247,49 @@ public class Menu {
             }
 
 
+        }
+
+    }
+
+    private void displayTasksAssignedToUsersInASprint(int sprintID) {
+
+        String finalURL = concatenateStrings( Constants.URL_TAIGA_PROJECT_BY_TASKS_IN_A_SPRINT_PART_ONE_UPTO_PROJECT,String.valueOf(currentSession.getResponseBySlug().getId()), Constants.URL_TAIGA_PROJECT_BY_TASKS_IN_A_SPRINT_PART_TWO_SPRINT, "");
+        finalURL = finalURL + sprintID;
+        TasksOnASprint tasksOnASprint;
+
+        JsonObject jsonObject = Connector.getResponseFromUrlAsJsonGET(finalURL);
+        try {
+
+            tasksOnASprint = new ObjectMapper().readValue(jsonObject.toString(), TasksOnASprint.class);
+
+            Map<String, Integer> userAssignedTasks = new HashMap<String, Integer>();
+
+            for(AssignedToItem assignedToItem: tasksOnASprint.getAssignedTo()){
+                String userName = assignedToItem.getFullName();
+                if(userAssignedTasks.containsKey(userName)) {
+                    userAssignedTasks.put(userName, userAssignedTasks.get(userName) + 1);
+                } else if(userName.length()>3){
+                    userAssignedTasks.put(userName, 0);
+                }
+            }
+            if(userAssignedTasks.keySet().size()>0) {
+                String stringToBeDisplayed = "#" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + "Name of User" + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                        + "Tasks Assigned" + Constants.MSG_CONSOLE_LINE_SEPARATOR;
+
+                InputOutput.displayHeadingOnConsole(stringToBeDisplayed);
+                int index = 0;
+                for (Map.Entry<String, Integer> userTaskInformation : userAssignedTasks.entrySet()) {
+                    stringToBeDisplayed = index + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                            + userTaskInformation.getKey() + Constants.MSG_CONSOLE_LINE_SEPARATOR
+                            + userTaskInformation.getValue();
+                    InputOutput.displayOnConsole(stringToBeDisplayed);
+                    index++;
+                }
+            }
+
+        } catch (JsonProcessingException e) {
+            InputOutput.displayOnConsole("The slug you entered is wrong. Can't establish connection.");
         }
 
     }

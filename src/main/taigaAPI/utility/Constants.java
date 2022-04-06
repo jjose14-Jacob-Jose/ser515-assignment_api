@@ -10,6 +10,8 @@ public class Constants {
     public static final String URL_TAIGA_PROJECT_BY_SLUG = "https://api.taiga.io/api/v1/projects/by_slug?slug=";
     public static final String URL_TAIGA_PROJECT_BY_MILESTONES = "https://api.taiga.io/api/v1/milestones?project=";
     public static final String URL_TAIGA_PROJECT_BY_USERSTORIES = "https://api.taiga.io/api/v1/userstories?project=";
+    public static final String URL_TAIGA_PROJECT_BY_TASKS_IN_A_SPRINT_PART_ONE_UPTO_PROJECT = "https://api.taiga.io/api/v1/tasks/filters_data?project=";
+    public static final String URL_TAIGA_PROJECT_BY_TASKS_IN_A_SPRINT_PART_TWO_SPRINT = "&milestone=";
 
     public static final String TYPE_CONNECTION_REQUEST_GET = "GET";
     public static final String TYPE_CONNECTION_REQUEST_POST = "POST";
@@ -22,6 +24,7 @@ public class Constants {
 
     public static final String MSG_CONSOLE_LINE_SEPARATOR = "  ";
     public static final String MSG_CONSOLE_HEADING_BOUNDARY = "***********************************************";
+    public static final String MSG_CONSOLE_NEW_LINE = "\n";
 
 
 
